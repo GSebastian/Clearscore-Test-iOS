@@ -11,7 +11,7 @@ struct CreditResponse: Codable {
     let accountIDVStatus: AccountIDVStatus?
     let creditReportInfo: CreditReportInfo?
     let dashboardStatus: DashboardStatus?
-    let personaType: String?
+    let personaType: PersonaType?
     let coachingSummary: CoachingSummary?
     // As explained in the README
     //    let augmentedCreditScore: AnyCodable?

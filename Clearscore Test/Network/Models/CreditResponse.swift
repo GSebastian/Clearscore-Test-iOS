@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreditResponse: Codable {
+struct CreditResponse: Codable, Equatable {
     let accountIDVStatus: AccountIDVStatus?
     let creditReportInfo: CreditReportInfo?
     let dashboardStatus: DashboardStatus?
@@ -19,7 +19,7 @@ struct CreditResponse: Codable {
 
 // MARK: - Associated Enums
 
-enum AccountIDVStatus: String, Codable {
+enum AccountIDVStatus: String, Codable, Equatable {
     case pass = "PASS"
     case unknown = "UNKNOWN"
     
@@ -35,7 +35,7 @@ enum AccountIDVStatus: String, Codable {
     }
 }
 
-enum DashboardStatus: String, Codable {
+enum DashboardStatus: String, Codable, Equatable {
     case pass = "PASS"
     case unknown = "UNKNOWN"
     
@@ -51,7 +51,7 @@ enum DashboardStatus: String, Codable {
     }
 }
 
-enum PersonaType: String, Codable {
+enum PersonaType: String, Codable, Equatable {
     case inexperienced = "INEXPERIENCED"
     case unknown = "UNKNOWN"
     

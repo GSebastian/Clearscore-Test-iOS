@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CoachingSummary: Codable {
+struct CoachingSummary: Codable, Equatable {
     let activeTodo: Bool?
     let activeChat: Bool?
     let numberOfTodoItems: Int?

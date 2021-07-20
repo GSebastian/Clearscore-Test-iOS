@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreditReportInfo: Codable {
+struct CreditReportInfo: Codable, Equatable {
     let score: Int?
     let scoreBand: Int?
     let clientRef: String?

@@ -99,13 +99,9 @@
 		96FD1B6926A7664700C8C5C6 /* Clearscore Test */ = {
 			isa = PBXGroup;
 			children = (
-				96FD1B6A26A7664700C8C5C6 /* AppDelegate.swift */,
-				96FD1B6C26A7664700C8C5C6 /* SceneDelegate.swift */,
+				96FD1B9A26A767AA00C8C5C6 /* Supporting files */,
 				96FD1B6E26A7664700C8C5C6 /* ViewController.swift */,
 				96FD1B7026A7664700C8C5C6 /* Main.storyboard */,
-				96FD1B7326A7664900C8C5C6 /* Assets.xcassets */,
-				96FD1B7526A7664900C8C5C6 /* LaunchScreen.storyboard */,
-				96FD1B7826A7664900C8C5C6 /* Info.plist */,
 			);
 			path = "Clearscore Test";
 			sourceTree = "<group>";
@@ -126,6 +122,18 @@
 				96FD1B8E26A7664900C8C5C6 /* Info.plist */,
 			);
 			path = "Clearscore TestUITests";
+			sourceTree = "<group>";
+		};
+		96FD1B9A26A767AA00C8C5C6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				96FD1B6A26A7664700C8C5C6 /* AppDelegate.swift */,
+				96FD1B6C26A7664700C8C5C6 /* SceneDelegate.swift */,
+				96FD1B7526A7664900C8C5C6 /* LaunchScreen.storyboard */,
+				96FD1B7326A7664900C8C5C6 /* Assets.xcassets */,
+				96FD1B7826A7664900C8C5C6 /* Info.plist */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -15,6 +15,10 @@
 		96FD1B7726A7664900C8C5C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD1B7526A7664900C8C5C6 /* LaunchScreen.storyboard */; };
 		96FD1B8226A7664900C8C5C6 /* Clearscore_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B8126A7664900C8C5C6 /* Clearscore_TestTests.swift */; };
 		96FD1B8D26A7664900C8C5C6 /* Clearscore_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B8C26A7664900C8C5C6 /* Clearscore_TestUITests.swift */; };
+		96FD1B9D26A768F500C8C5C6 /* CreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B9C26A768F500C8C5C6 /* CreditService.swift */; };
+		96FD1BA026A7692400C8C5C6 /* CreditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B9F26A7692400C8C5C6 /* CreditResponse.swift */; };
+		96FD1BA226A7694400C8C5C6 /* CreditReportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1BA126A7694400C8C5C6 /* CreditReportInfo.swift */; };
+		96FD1BA426A7697800C8C5C6 /* CoachingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1BA326A7697800C8C5C6 /* CoachingSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,11 @@
 		96FD1B8826A7664900C8C5C6 /* Clearscore TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clearscore TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD1B8C26A7664900C8C5C6 /* Clearscore_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clearscore_TestUITests.swift; sourceTree = "<group>"; };
 		96FD1B8E26A7664900C8C5C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96FD1B9C26A768F500C8C5C6 /* CreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditService.swift; sourceTree = "<group>"; };
+		96FD1B9F26A7692400C8C5C6 /* CreditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResponse.swift; sourceTree = "<group>"; };
+		96FD1BA126A7694400C8C5C6 /* CreditReportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditReportInfo.swift; sourceTree = "<group>"; };
+		96FD1BA326A7697800C8C5C6 /* CoachingSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachingSummary.swift; sourceTree = "<group>"; };
+		96FD1BA726A76CF800C8C5C6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +88,7 @@
 		96FD1B5E26A7664700C8C5C6 = {
 			isa = PBXGroup;
 			children = (
+				96FD1BA726A76CF800C8C5C6 /* README.md */,
 				96FD1B6926A7664700C8C5C6 /* Clearscore Test */,
 				96FD1B8026A7664900C8C5C6 /* Clearscore TestTests */,
 				96FD1B8B26A7664900C8C5C6 /* Clearscore TestUITests */,
@@ -99,6 +109,7 @@
 		96FD1B6926A7664700C8C5C6 /* Clearscore Test */ = {
 			isa = PBXGroup;
 			children = (
+				96FD1B9B26A768D000C8C5C6 /* Network */,
 				96FD1B9A26A767AA00C8C5C6 /* Supporting files */,
 				96FD1B6E26A7664700C8C5C6 /* ViewController.swift */,
 				96FD1B7026A7664700C8C5C6 /* Main.storyboard */,
@@ -134,6 +145,25 @@
 				96FD1B7826A7664900C8C5C6 /* Info.plist */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		96FD1B9B26A768D000C8C5C6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				96FD1B9E26A7690600C8C5C6 /* Models */,
+				96FD1B9C26A768F500C8C5C6 /* CreditService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		96FD1B9E26A7690600C8C5C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96FD1B9F26A7692400C8C5C6 /* CreditResponse.swift */,
+				96FD1BA126A7694400C8C5C6 /* CreditReportInfo.swift */,
+				96FD1BA326A7697800C8C5C6 /* CoachingSummary.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96FD1BA226A7694400C8C5C6 /* CreditReportInfo.swift in Sources */,
 				96FD1B6F26A7664700C8C5C6 /* ViewController.swift in Sources */,
+				96FD1BA026A7692400C8C5C6 /* CreditResponse.swift in Sources */,
 				96FD1B6B26A7664700C8C5C6 /* AppDelegate.swift in Sources */,
+				96FD1BA426A7697800C8C5C6 /* CoachingSummary.swift in Sources */,
+				96FD1B9D26A768F500C8C5C6 /* CreditService.swift in Sources */,
 				96FD1B6D26A7664700C8C5C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

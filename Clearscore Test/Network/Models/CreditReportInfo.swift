@@ -28,7 +28,7 @@ struct CreditReportInfo: Codable {
     let changeInShortTermDebt: Int?
     let currentLongTermDebt: Int?
     let currentLongTermNonPromotionalDebt: Int?
-    // As explained in the README
+    // Note for interviewer:  As explained in the README
     //    let currentLongTermCreditLimit: AnyCodable?
     //    let currentLongTermCreditUtilisation: AnyCodable?
     let changeInLongTermDebt: Int?

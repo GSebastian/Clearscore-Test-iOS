@@ -13,7 +13,7 @@ struct CreditResponse: Codable {
     let dashboardStatus: DashboardStatus?
     let personaType: PersonaType?
     let coachingSummary: CoachingSummary?
-    // As explained in the README
+    // Note for interviewer:  As explained in the README
     //    let augmentedCreditScore: AnyCodable?
 }
 

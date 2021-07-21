@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScoreView" customModule="Clearscore_Test" customModuleProvider="target">
+            <connections>
+                <outlet property="dialView" destination="xdv-aD-vFD" id="0KI-LD-tf9"/>
+                <outlet property="maxScoreLabel" destination="Ds2-48-bGu" id="4qW-QF-XnC"/>
+                <outlet property="rootView" destination="iN0-l3-epB" id="gDY-50-3qU"/>
+                <outlet property="scoreIntroLabel" destination="9Op-Un-Zz7" id="dX1-3l-Iqp"/>
+                <outlet property="scoreLabel" destination="PDR-7T-bFe" id="cfx-4N-MW9"/>
+                <outlet property="scoreStatusLabel" destination="Tex-Qh-Hgu" id="17p-Yl-JOr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-aD-vFD" userLabel="Dial View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6t3-WR-tM8" userLabel="Text Stack View">
+                    <rect key="frame" x="148.5" y="201.5" width="117.5" height="77.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(your credit score is)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Op-Un-Zz7" userLabel="Score Intro Label">
+                            <rect key="frame" x="0.0" y="0.0" width="117.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(499)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDR-7T-bFe" userLabel="Score Label">
+                            <rect key="frame" x="0.0" y="14.5" width="117.5" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(out of 700)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds2-48-bGu" userLabel="Max Score Label">
+                            <rect key="frame" x="0.0" y="43.5" width="117.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Looking bright)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tex-Qh-Hgu" userLabel="Score Status Label">
+                            <rect key="frame" x="0.0" y="60.5" width="117.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xdv-aD-vFD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3i8-P2-Nvo"/>
+                <constraint firstItem="6t3-WR-tM8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="9Wu-18-5ei"/>
+                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="6t3-WR-tM8" secondAttribute="bottom" id="H7q-xq-8sn"/>
+                <constraint firstItem="6t3-WR-tM8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NoK-Vr-oSx"/>
+                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6t3-WR-tM8" secondAttribute="trailing" id="OVR-EO-KIN"/>
+                <constraint firstAttribute="bottom" secondItem="xdv-aD-vFD" secondAttribute="bottom" id="QbF-KE-TyX"/>
+                <constraint firstItem="6t3-WR-tM8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="R9D-7t-kzp"/>
+                <constraint firstAttribute="trailing" secondItem="xdv-aD-vFD" secondAttribute="trailing" id="jnp-yZ-uin"/>
+                <constraint firstItem="xdv-aD-vFD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lb5-fb-JtS"/>
+                <constraint firstItem="6t3-WR-tM8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="nDH-4a-Dc9"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-7.3660714285714279"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

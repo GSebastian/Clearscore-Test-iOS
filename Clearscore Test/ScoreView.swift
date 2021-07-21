@@ -20,8 +20,15 @@ class ScoreView: UIView {
     
     @IBInspectable var circleColor: UIColor = .systemBlue
     @IBInspectable var lineWidth: Float = 4
-    @IBInspectable private(set) var score: Int = 400
-    @IBInspectable private(set) var maxScore: Int = 700
+    @IBInspectable var score: Int = 700
+    @IBInspectable var maxScore: Int = 700
+    @IBInspectable var animationProgress: Float = 1
+    
+    private var angle: CGFloat {
+        let angleStartingAt3 = CGFloat(score) * 2.0 * CGFloat.pi / CGFloat(maxScore)
+        let angleStartingAt12 = angleStartingAt3 - (CGFloat.pi / 2)
+        return angleStartingAt12
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,14 +60,15 @@ class ScoreView: UIView {
         circleLayer.backgroundColor = backgroundColor?.cgColor
         circleLayer.fillColor = backgroundColor?.cgColor
         circleLayer.lineWidth = CGFloat(lineWidth)
+        circleLayer.strokeEnd = CGFloat(animationProgress)
         
         let arcCenter = CGPoint(x: frame.width / 2, y: frame.height / 2)
         let radius = frame.width / 2
         let circlePath = UIBezierPath(
             arcCenter: arcCenter,
             radius: radius,
-            startAngle: 0,
-            endAngle: CGFloat(Double.pi),
+            startAngle: (CGFloat.pi / 2) * -1,
+            endAngle: angle,
             clockwise: true)
         circleLayer.path = circlePath.cgPath
         

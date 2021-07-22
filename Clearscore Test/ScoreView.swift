@@ -114,7 +114,10 @@ class ScoreView: UIView {
     }
     
     private func animate() {
-        guard !UIAccessibility.isReduceMotionEnabled else { return }
+        guard !UIAccessibility.isReduceMotionEnabled else {
+            animationCompletionHandler?()
+            return
+        }
         
         func createDialAnimation() -> CAAnimation {
             let animation = CABasicAnimation(keyPath: #keyPath(CAShapeLayer.strokeEnd))

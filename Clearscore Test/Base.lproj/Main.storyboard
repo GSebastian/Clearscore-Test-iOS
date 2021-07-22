@@ -16,23 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-4h-tZT" customClass="ScoreView" customModule="Clearscore_Test" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kcm-eG-xf6">
                                 <rect key="frame" x="103.5" y="349.5" width="207" height="207"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fk9-4h-tZT" secondAttribute="height" id="hUN-xv-FyF"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="lNn-W5-1pb"/>
-                                </constraints>
-                            </view>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-4h-tZT" customClass="ScoreView" customModule="Clearscore_Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fk9-4h-tZT" secondAttribute="height" id="hUN-xv-FyF"/>
+                                        </constraints>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-Fc-i3R">
+                                        <rect key="frame" x="50.5" y="0.0" width="106" height="0.0"/>
+                                        <state key="normal" title="(Find out more)"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fk9-4h-tZT" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" priority="800" id="F9L-0G-73B"/>
-                            <constraint firstItem="fk9-4h-tZT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kg2-gt-5b4"/>
-                            <constraint firstItem="fk9-4h-tZT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cn7-KV-YNa"/>
+                            <constraint firstItem="kcm-eG-xf6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5lt-ma-cWk"/>
+                            <constraint firstItem="kcm-eG-xf6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerYWithinMargins" id="9Ee-4n-u7P"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kcm-eG-xf6" secondAttribute="trailing" id="GOb-UH-AaO"/>
+                            <constraint firstItem="kcm-eG-xf6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="LXn-GB-n7n"/>
+                            <constraint firstItem="kcm-eG-xf6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="OBG-Ii-kUC"/>
+                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="kcm-eG-xf6" secondAttribute="bottom" id="Xxc-ko-9DR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
+                        <outlet property="scoreView" destination="fk9-4h-tZT" id="zbm-A1-Mfw"/>
+                        <outlet property="stackView" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

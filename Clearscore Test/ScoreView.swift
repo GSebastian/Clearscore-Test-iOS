@@ -73,6 +73,13 @@ class ScoreView: UIView {
         animate()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        circleLayer.superlayer.map { _ in self.circleLayer.removeFromSuperlayer() }
+        drawCircle()
+    }
+    
     private func loadView() {
         Bundle.main.loadNibNamed(Self.nibName, owner: self, options: nil)
         addSubview(rootView)
@@ -83,13 +90,12 @@ class ScoreView: UIView {
     }
     
     private func initSubviews() {
-        circleLayer.superlayer.map { $0.removeFromSuperlayer() }
-        drawCircle()
-        
         scoreIntroLabel.text = viewModel.scoreIntroText
         scoreLabel.text = viewModel.scoreText
         maxScoreLabel.text = viewModel.maxScoreText
         scoreStatusLabel.text = viewModel.scoreStatusText
+        
+        drawCircle()
     }
     
     private func drawCircle() {

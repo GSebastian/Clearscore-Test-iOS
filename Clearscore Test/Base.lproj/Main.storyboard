@@ -25,10 +25,21 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fk9-4h-tZT" secondAttribute="height" id="hUN-xv-FyF"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                <color key="value" systemColor="systemOrangeColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-Fc-i3R">
-                                        <rect key="frame" x="50.5" y="0.0" width="106" height="0.0"/>
-                                        <state key="normal" title="(Find out more)"/>
+                                        <rect key="frame" x="36" y="0.0" width="135" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="(Find out more)">
+                                            <color key="titleColor" systemColor="systemOrangeColor"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -58,6 +69,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

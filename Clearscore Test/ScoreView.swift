@@ -100,8 +100,8 @@ class ScoreView: UIView {
     
     private func drawCircle() {
         circleLayer.strokeColor = circleColor.cgColor
-        circleLayer.backgroundColor = backgroundColor?.cgColor
-        circleLayer.fillColor = backgroundColor?.cgColor
+        circleLayer.backgroundColor = UIColor.clear.cgColor
+        circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineWidth = CGFloat(lineWidth)
         circleLayer.strokeEnd = 1
         circleLayer.lineCap = .round

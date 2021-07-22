@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Clearscore Test
+
+  Created by Sebastian Ghetu on 22/07/2021.
+  
+*/
+
+scoreView.intro = "Your credit score is";
+scoreView.scoreFormattable = "%@";
+scoreView.maxScoreFormattable = "out of %@";
+scoreView.status.bright = "Looking bright";
+scoreView.status.neutral = "Looking neutral";
+scoreView.status.overcast = "Looking overcast";

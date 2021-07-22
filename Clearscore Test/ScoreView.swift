@@ -28,14 +28,12 @@ class ScoreView: UIView {
     
     @IBInspectable var circleColor: UIColor = .systemBlue
     @IBInspectable var lineWidth: Float = 4
-    @IBInspectable var score: Int = 654
-    @IBInspectable var maxScore: Int = 700
     @IBInspectable var duration: CFTimeInterval = 1
     
     // MARK: - Computed Properties
     
     private var angle: CGFloat {
-        let angleStartingAt3 = CGFloat(score) * 2.0 * CGFloat.pi / CGFloat(maxScore)
+        let angleStartingAt3 = CGFloat(viewModel.score) * 2.0 * CGFloat.pi / CGFloat(viewModel.maxScore)
         let angleStartingAt12 = angleStartingAt3 - (CGFloat.pi / 2)
         return angleStartingAt12
     }
@@ -47,6 +45,12 @@ class ScoreView: UIView {
     // MARK: - Other Properties
     
     private let circleLayer = CAShapeLayer()
+    
+    var viewModel: ScoreViewModel = .preview {
+        didSet {
+            initSubviews()
+        }
+    }
     
     // MARK: - Init
     
@@ -72,7 +76,17 @@ class ScoreView: UIView {
         rootView.frame = bounds
         rootView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        initSubviews()
+    }
+    
+    private func initSubviews() {
+        circleLayer.superlayer.map { $0.removeFromSuperlayer() }
         drawCircle()
+        
+        scoreIntroLabel.text = viewModel.scoreIntroText
+        scoreLabel.text = viewModel.scoreText
+        maxScoreLabel.text = viewModel.maxScoreText
+        scoreStatusLabel.text = viewModel.scoreStatusText
     }
     
     private func drawCircle() {

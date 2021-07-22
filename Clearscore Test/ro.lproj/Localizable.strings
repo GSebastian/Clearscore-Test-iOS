@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Clearscore Test
+
+  Created by Sebastian Ghetu on 22/07/2021.
+  
+*/
+
+scoreView.intro = "Scorul tau este";
+scoreView.scoreFormattable = "%@";
+scoreView.maxScoreFormattable = "din %@";
+scoreView.status.bright = "Arata insorit";
+scoreView.status.neutral = "Arata neutru";
+scoreView.status.overcast = "Arata innorat";

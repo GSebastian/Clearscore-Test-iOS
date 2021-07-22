@@ -11,8 +11,9 @@ import UIKit
 @IBDesignable
 class ScoreView: UIView {
     
-    private static var nibName: String = "ScoreView"
-    private static var circleAnimationKey: String = "circleAnimationKey"
+    private static var nibName = "ScoreView"
+    private static var circleAnimationKey = "circleAnimationKey"
+    private static var labelAnimationKey = "labelAnimationKey"
     
     // MARK: - Outlets
     
@@ -38,8 +39,8 @@ class ScoreView: UIView {
         return angleStartingAt12
     }
     
-    private var otherLabels: [UIView] {
-        [scoreIntroLabel, maxScoreLabel, scoreStatusLabel]
+    private var allLabels: [UIView] {
+        [scoreLabel, scoreIntroLabel, maxScoreLabel, scoreStatusLabel]
     }
     
     // MARK: - Other Properties
@@ -51,6 +52,8 @@ class ScoreView: UIView {
             initSubviews()
         }
     }
+    
+    var animationCompletionHandler: (() -> Void)?
     
     // MARK: - Init
     
@@ -113,36 +116,32 @@ class ScoreView: UIView {
     private func animate() {
         guard !UIAccessibility.isReduceMotionEnabled else { return }
         
-        func animateDial() {
+        func createDialAnimation() -> CAAnimation {
             let animation = CABasicAnimation(keyPath: #keyPath(CAShapeLayer.strokeEnd))
             animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
-            
             animation.fromValue = 0.0
             animation.toValue = 1.0
-            
             animation.duration = duration
-            
-            circleLayer.add(animation, forKey: Self.circleAnimationKey)
-            
-            circleLayer.strokeEnd = 1
+        
+            return animation
         }
         
-        func animateLabel() {
-            (otherLabels + [scoreLabel]).forEach { $0?.alpha = 0 }
+        func createLabelsAnimation() -> CAAnimation {
+            let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+            animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            animation.fromValue = 0.0
+            animation.toValue = 1.0
+            animation.duration = duration
             
-            UIView.animate(withDuration: duration) {
-                self.scoreLabel.alpha = 1
-            }
-            
-            UIView.animate(withDuration: duration * 1.5) {
-                self.otherLabels.forEach { $0.alpha = 1 }
-            } completion: { _ in
-                self.otherLabels.forEach { $0.alpha = 1 }
-            }
-
+            return animation
         }
-
-        animateDial()
-        animateLabel()
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { [weak self] in
+            self?.animationCompletionHandler?()
+        }
+        circleLayer.add(createDialAnimation(), forKey: Self.circleAnimationKey)
+        allLabels.forEach { $0.layer.add(createLabelsAnimation(), forKey: Self.labelAnimationKey) }
+        CATransaction.commit()
     }
 }

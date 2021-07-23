@@ -8,11 +8,11 @@
 import Foundation
 
 struct CreditResponse: Codable, Equatable {
-    let accountIDVStatus: AccountIDVStatus?
-    let creditReportInfo: CreditReportInfo?
-    let dashboardStatus: DashboardStatus?
-    let personaType: PersonaType?
-    let coachingSummary: CoachingSummary?
+    let accountIDVStatus: AccountIDVStatus
+    let creditReportInfo: CreditReportInfo
+    let dashboardStatus: DashboardStatus
+    let personaType: PersonaType
+    let coachingSummary: CoachingSummary
     // Note for interviewer:  As explained in the README
     //    let augmentedCreditScore: AnyCodable?
 }

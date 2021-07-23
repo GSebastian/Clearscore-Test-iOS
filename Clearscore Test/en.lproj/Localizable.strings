@@ -7,8 +7,8 @@
 */
 
 scoreView.intro = "Your credit score is";
-scoreView.scoreFormattable = "%@";
-scoreView.maxScoreFormattable = "out of %@";
+scoreView.scoreFormattable = "%d";
+scoreView.maxScoreFormattable = "out of %d";
 scoreView.status.bright = "Looking bright";
 scoreView.status.neutral = "Looking neutral";
 scoreView.status.overcast = "Looking overcast";

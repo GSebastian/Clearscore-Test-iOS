@@ -16,52 +16,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kcm-eG-xf6">
-                                <rect key="frame" x="103.5" y="349.5" width="207" height="207"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-4h-tZT" customClass="ScoreView" customModule="Clearscore_Test" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fk9-4h-tZT" secondAttribute="height" id="hUN-xv-FyF"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                <color key="value" systemColor="systemOrangeColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-Fc-i3R">
-                                        <rect key="frame" x="36" y="0.0" width="135" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="(Find out more)">
-                                            <color key="titleColor" systemColor="systemOrangeColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oXC-Hh-e7y">
+                                <rect key="frame" x="20" y="452.5" width="374" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" placeholder="YES" id="LBt-KL-tu1"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kcm-eG-xf6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5lt-ma-cWk"/>
-                            <constraint firstItem="kcm-eG-xf6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerYWithinMargins" id="9Ee-4n-u7P"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kcm-eG-xf6" secondAttribute="trailing" id="GOb-UH-AaO"/>
-                            <constraint firstItem="kcm-eG-xf6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="LXn-GB-n7n"/>
-                            <constraint firstItem="kcm-eG-xf6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="OBG-Ii-kUC"/>
-                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="kcm-eG-xf6" secondAttribute="bottom" id="Xxc-ko-9DR"/>
+                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AwG-5c-VbD"/>
+                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WJN-pi-VW6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oXC-Hh-e7y" secondAttribute="bottom" id="gNe-EV-B0h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oXC-Hh-e7y" secondAttribute="trailing" id="qnK-bA-v0E"/>
+                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zs0-92-Nck"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
+                        <outlet property="contentWrapperView" destination="oXC-Hh-e7y" id="tql-1h-DXh"/>
                         <outlet property="scoreView" destination="fk9-4h-tZT" id="zbm-A1-Mfw"/>
                         <outlet property="stackView" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" id="kcm-eG-xf6">
+                    <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-4h-tZT" customClass="ScoreView" customModule="Clearscore_Test" customModuleProvider="target">
+                            <rect key="frame" x="13.5" y="0.0" width="180" height="180"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="fk9-4h-tZT" secondAttribute="height" id="hUN-xv-FyF"/>
+                                <constraint firstAttribute="width" constant="180" id="lAH-W4-2KY"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                    <color key="value" systemColor="systemOrangeColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <real key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-Fc-i3R">
+                            <rect key="frame" x="36" y="0.0" width="135" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="(Find out more)">
+                                <color key="titleColor" systemColor="systemOrangeColor"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="5aZ-xK-J2t"/>
+                </stackView>
             </objects>
             <point key="canvasLocation" x="133" y="117"/>
         </scene>

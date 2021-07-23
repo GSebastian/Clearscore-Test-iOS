@@ -37,20 +37,20 @@
                         <outlet property="button" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
                         <outlet property="contentWrapperView" destination="oXC-Hh-e7y" id="tql-1h-DXh"/>
                         <outlet property="scoreView" destination="fk9-4h-tZT" id="zbm-A1-Mfw"/>
-                        <outlet property="stackView" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
+                        <outlet property="scoreWrapper" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" id="kcm-eG-xf6">
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="16" id="kcm-eG-xf6" userLabel="Score Wrapper">
                     <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-4h-tZT" customClass="ScoreView" customModule="Clearscore_Test" customModuleProvider="target">
-                            <rect key="frame" x="13.5" y="0.0" width="180" height="180"/>
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="fk9-4h-tZT" secondAttribute="height" id="hUN-xv-FyF"/>
-                                <constraint firstAttribute="width" constant="180" id="lAH-W4-2KY"/>
+                                <constraint firstAttribute="width" priority="999" constant="180" id="lAH-W4-2KY"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
@@ -69,7 +69,6 @@
                             </state>
                         </button>
                     </subviews>
-                    <viewLayoutGuide key="safeArea" id="5aZ-xK-J2t"/>
                 </stackView>
             </objects>
             <point key="canvasLocation" x="133" y="117"/>

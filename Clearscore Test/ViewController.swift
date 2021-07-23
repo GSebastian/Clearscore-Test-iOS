@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var contentWrapperView: UIStackView!
     
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var scoreWrapper: UIStackView!
     @IBOutlet weak var scoreView: ScoreView!
     @IBOutlet weak var button: UIButton!
     
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             
             self.scoreView.viewModel = viewModel
             
-            self.contentWrapperView.addArrangedSubview(self.stackView)
+            self.contentWrapperView.addArrangedSubview(self.scoreWrapper)
 
             self.scoreView.animationCompletionHandler = { [unowned self] in
                 UIView.animate(withDuration: 0.3) {

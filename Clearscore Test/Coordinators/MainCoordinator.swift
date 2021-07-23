@@ -48,6 +48,13 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator: MainCoordinatorProtocol {
     
     func showDetail() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        guard
+            let vc = storyboard.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController else {
+            preconditionFailure(MVVMError.initFromStoryboard.errorDescription ?? "")
+        }
+        
+        root?.present(vc, animated: true, completion: nil)
     }
 }

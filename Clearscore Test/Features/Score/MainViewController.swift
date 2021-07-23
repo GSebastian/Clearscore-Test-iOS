@@ -26,6 +26,10 @@ class MainViewController: UIViewController {
     
     // MARK: - IB Actions
     
+    @IBAction func scoreDetailButtonTapped(_ sender: Any) {
+        coordinatorDelegate?.showDetail()
+    }
+    
     @IBAction func failureButtonTapped(_ sender: Any) {
         contentWrapperView.insertArrangedSubview(activityIndicatorView, at: 0)
         viewModel?.fetchScore()

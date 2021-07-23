@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailsViewRobot: BaseRobot {
+struct DetailsViewRobot: BaseRobotProtocol {
     
     // MARK: - Elements
     

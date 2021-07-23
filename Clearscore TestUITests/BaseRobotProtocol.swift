@@ -7,9 +7,8 @@
 
 import XCTest
 
-protocol BaseRobot { }
+protocol BaseRobotProtocol { }
 
-extension BaseRobot {
-    
-    var application: XCUIApplication { XCUIApplication() }
+extension BaseRobotProtocol {
+    var app: XCUIApplication { XCUIApplication() }
 }

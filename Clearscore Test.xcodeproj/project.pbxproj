@@ -12,9 +12,9 @@
 		9607B5D426AB328C0034131F /* CreditServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5D326AB328C0034131F /* CreditServiceProtocol.swift */; };
 		9607B5D726AB34410034131F /* CreditResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5D626AB34410034131F /* CreditResponse+Stub.swift */; };
 		9607B5D926AB3F230034131F /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5D826AB3F230034131F /* UIStackView+Utils.swift */; };
-		9607B5DB26AB62930034131F /* BaseUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5DA26AB62930034131F /* BaseUITest.swift */; };
+		9607B5DB26AB62930034131F /* XCTestCase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5DA26AB62930034131F /* XCTestCase+Utils.swift */; };
 		9607B5DF26AB64AA0034131F /* MainViewRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5DE26AB64AA0034131F /* MainViewRobot.swift */; };
-		9607B5E126AB66B10034131F /* BaseRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5E026AB66B10034131F /* BaseRobot.swift */; };
+		9607B5E126AB66B10034131F /* BaseRobotProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5E026AB66B10034131F /* BaseRobotProtocol.swift */; };
 		9607B5E426AB67A00034131F /* DetailsViewRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5E326AB67A00034131F /* DetailsViewRobot.swift */; };
 		96BC6B8526A9A78D00C6A8CB /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */; };
 		96BC6B8A26A9E23700C6A8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96BC6B8C26A9E23700C6A8CB /* Localizable.strings */; };
@@ -63,9 +63,9 @@
 		9607B5D326AB328C0034131F /* CreditServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditServiceProtocol.swift; sourceTree = "<group>"; };
 		9607B5D626AB34410034131F /* CreditResponse+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditResponse+Stub.swift"; sourceTree = "<group>"; };
 		9607B5D826AB3F230034131F /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
-		9607B5DA26AB62930034131F /* BaseUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITest.swift; sourceTree = "<group>"; };
+		9607B5DA26AB62930034131F /* XCTestCase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Utils.swift"; sourceTree = "<group>"; };
 		9607B5DE26AB64AA0034131F /* MainViewRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRobot.swift; sourceTree = "<group>"; };
-		9607B5E026AB66B10034131F /* BaseRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRobot.swift; sourceTree = "<group>"; };
+		9607B5E026AB66B10034131F /* BaseRobotProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRobotProtocol.swift; sourceTree = "<group>"; };
 		9607B5E326AB67A00034131F /* DetailsViewRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewRobot.swift; sourceTree = "<group>"; };
 		96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		96BC6B8B26A9E23700C6A8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 			children = (
 				9607B5DC26AB64480034131F /* Features */,
 				96FD1B8E26A7664900C8C5C6 /* Info.plist */,
-				9607B5DA26AB62930034131F /* BaseUITest.swift */,
-				9607B5E026AB66B10034131F /* BaseRobot.swift */,
+				9607B5DA26AB62930034131F /* XCTestCase+Utils.swift */,
+				9607B5E026AB66B10034131F /* BaseRobotProtocol.swift */,
 			);
 			path = "Clearscore TestUITests";
 			sourceTree = "<group>";
@@ -506,9 +506,9 @@
 			files = (
 				9607B5E426AB67A00034131F /* DetailsViewRobot.swift in Sources */,
 				9607B5DF26AB64AA0034131F /* MainViewRobot.swift in Sources */,
-				9607B5DB26AB62930034131F /* BaseUITest.swift in Sources */,
+				9607B5DB26AB62930034131F /* XCTestCase+Utils.swift in Sources */,
 				96FD1B8D26A7664900C8C5C6 /* MainViewTests.swift in Sources */,
-				9607B5E126AB66B10034131F /* BaseRobot.swift in Sources */,
+				9607B5E126AB66B10034131F /* BaseRobotProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

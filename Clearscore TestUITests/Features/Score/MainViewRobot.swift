@@ -7,16 +7,16 @@
 
 import XCTest
 
-struct MainViewRobot: BaseRobot {
+struct MainViewRobot: BaseRobotProtocol {
     
     // MARK: - Elements
     
-    var introText: XCUIElement { application.staticTexts["Your credit score is"] }
-    var scoreText: XCUIElement { application.staticTexts["514"] }
-    var maxScoreText: XCUIElement { application.staticTexts["out of 700"] }
-    var scoreStatusText: XCUIElement { application.staticTexts["Looking bright"] }
+    var introText: XCUIElement { app.staticTexts["Your credit score is"] }
+    var scoreText: XCUIElement { app.staticTexts["514"] }
+    var maxScoreText: XCUIElement { app.staticTexts["out of 700"] }
+    var scoreStatusText: XCUIElement { app.staticTexts["Looking bright"] }
     
-    var detailButton: XCUIElement { application.buttons["Find out more"] }
+    var detailButton: XCUIElement { app.buttons["Find out more"] }
     
     // MARK: - Actions
     

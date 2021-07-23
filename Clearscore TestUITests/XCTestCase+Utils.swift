@@ -7,9 +7,6 @@
 
 import XCTest
 
-class BaseUITest: XCTestCase {
-    
-    var application: XCUIApplication {
-        XCUIApplication()
-    }
+extension XCTestCase {
+    var application: XCUIApplication { XCUIApplication() }
 }

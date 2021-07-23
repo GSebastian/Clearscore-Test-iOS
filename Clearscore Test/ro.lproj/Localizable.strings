@@ -12,3 +12,8 @@ scoreView.maxScoreFormattable = "din %@";
 scoreView.status.bright = "Arata insorit";
 scoreView.status.neutral = "Arata neutru";
 scoreView.status.overcast = "Arata innorat";
+
+mainViewController.navigation.title = "ClearScore";
+mainViewController.successView.detailButton = "Afla mai multe";
+mainViewController.failureView.description = "Am intampinat o problema.";
+mainViewController.failureView.button = "Incercati din nou";

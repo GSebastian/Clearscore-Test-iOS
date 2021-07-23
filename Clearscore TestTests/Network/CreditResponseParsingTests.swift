@@ -11,7 +11,7 @@ import XCTest
 
 class CreditResponseParsingTests: XCTestCase {
 
-    func testNormalResponse() throws {
+    func test_normalResponse() throws {
         // We're happy to unwrap here - if it fails, there's something wrong
         // with our test setup, not a genuine failure
         let responseAsData = data(from: RawResponses.normal.rawValue)!

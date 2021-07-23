@@ -8,13 +8,9 @@
 import Combine
 import Foundation
 
-// Note for interviewer:  I've made this very simple because of time constraints. In production,
-// we would want something more testable. I would pass a URLSession in here
-// (rather than using the singleton) and create my own mocked URLSession.
-// Then, I would be able to control the responses, checking what they map to.
-struct CreditService {
+class CreditService: CreditServiceProtocol {
     
-    static func getCreditData() -> AnyPublisher<CreditResponse, Error> {
+    func getCreditData() -> AnyPublisher<CreditResponse, Error> {
         // Note for interviewer:  Force-unwrapping here as the string is hardcoded.
         // In production, if this was a string built from multiple parts (e.g.
         // different environments), then I'd probably guard and raise a specific

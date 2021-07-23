@@ -15,8 +15,16 @@ class MainViewModel {
     var creditSuccessHandler: ((ScoreViewModel, String) -> Void)?
     var creditFailureHandler: (() -> Void)?
     
+    private var creditService: CreditServiceProtocol
+    
     private var cancellable: AnyCancellable?
 
+    // MARK: - Init
+    
+    init(creditService: CreditServiceProtocol = CreditService()) {
+        self.creditService = creditService
+    }
+    
     // MARK: - VC Lifecycle
     
     func viewDidLoad() {
@@ -24,8 +32,14 @@ class MainViewModel {
     }
     
     func fetchScore() {
-        self.cancellable = CreditService.getCreditData().sink { completion in
-            
+        self.cancellable = creditService.getCreditData().sink { [weak self] completion in
+            guard let self = self else { return }
+            switch completion {
+            case .failure:
+                self.creditFailureHandler?()
+            default:
+                break
+            }
         } receiveValue: { [weak self] response in
             guard let self = self else { return }
             

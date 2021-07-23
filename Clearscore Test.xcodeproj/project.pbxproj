@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9607B5D026AB31900034131F /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5CF26AB31900034131F /* MainViewModelTests.swift */; };
+		9607B5D226AB32610034131F /* MockCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5D126AB32610034131F /* MockCreditService.swift */; };
+		9607B5D426AB328C0034131F /* CreditServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5D326AB328C0034131F /* CreditServiceProtocol.swift */; };
+		9607B5D726AB34410034131F /* CreditResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5D626AB34410034131F /* CreditResponse+Stub.swift */; };
 		96BC6B8526A9A78D00C6A8CB /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */; };
 		96BC6B8A26A9E23700C6A8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96BC6B8C26A9E23700C6A8CB /* Localizable.strings */; };
 		96BC6B9326AA2C8D00C6A8CB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC6B9226AA2C8D00C6A8CB /* Errors.swift */; };
@@ -49,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9607B5CF26AB31900034131F /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		9607B5D126AB32610034131F /* MockCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCreditService.swift; sourceTree = "<group>"; };
+		9607B5D326AB328C0034131F /* CreditServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditServiceProtocol.swift; sourceTree = "<group>"; };
+		9607B5D626AB34410034131F /* CreditResponse+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditResponse+Stub.swift"; sourceTree = "<group>"; };
 		96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		96BC6B8B26A9E23700C6A8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96BC6B9026A9ED6300C6A8CB /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -106,6 +114,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9607B5CD26AB317D0034131F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9607B5CE26AB31820034131F /* Score */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9607B5CE26AB31820034131F /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				9607B5CF26AB31900034131F /* MainViewModelTests.swift */,
+			);
+			path = Score;
+			sourceTree = "<group>";
+		};
+		9607B5D526AB34280034131F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9607B5D626AB34410034131F /* CreditResponse+Stub.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		96BC6B9126AA2C7F00C6A8CB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +238,7 @@
 		96FD1B8026A7664900C8C5C6 /* Clearscore TestTests */ = {
 			isa = PBXGroup;
 			children = (
+				9607B5CD26AB317D0034131F /* Features */,
 				96FD1BA826A77D5C00C8C5C6 /* Network */,
 				96D6526E26AAFAC0001CED94 /* Views */,
 				96FD1B8326A7664900C8C5C6 /* Info.plist */,
@@ -239,6 +272,7 @@
 			children = (
 				96FD1B9E26A7690600C8C5C6 /* Models */,
 				96FD1B9C26A768F500C8C5C6 /* CreditService.swift */,
+				9607B5D326AB328C0034131F /* CreditServiceProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -256,7 +290,9 @@
 		96FD1BA826A77D5C00C8C5C6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9607B5D526AB34280034131F /* Models */,
 				96FD1BAA26A77D9B00C8C5C6 /* CreditResponseParsingTests.swift */,
+				9607B5D126AB32610034131F /* MockCreditService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -394,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9607B5D426AB328C0034131F /* CreditServiceProtocol.swift in Sources */,
 				96FD1BA226A7694400C8C5C6 /* CreditReportInfo.swift in Sources */,
 				96FD1BB026A8B73B00C8C5C6 /* ScoreView.swift in Sources */,
 				96FD1B6F26A7664700C8C5C6 /* MainViewController.swift in Sources */,
@@ -415,6 +452,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9607B5D226AB32610034131F /* MockCreditService.swift in Sources */,
+				9607B5D026AB31900034131F /* MainViewModelTests.swift in Sources */,
+				9607B5D726AB34410034131F /* CreditResponse+Stub.swift in Sources */,
 				96FD1BAB26A77D9B00C8C5C6 /* CreditResponseParsingTests.swift in Sources */,
 				96D6526726AAF26D001CED94 /* ScoreViewModelTests.swift in Sources */,
 			);

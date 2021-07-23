@@ -58,10 +58,9 @@ class ScoreView: UIView {
             layoutIfNeeded()
         }
     }
-    
-    var animationCompletionHandler: (() -> Void)?
-    
+        
     // MARK: - Init
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadView()

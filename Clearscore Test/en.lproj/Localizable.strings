@@ -12,3 +12,8 @@ scoreView.maxScoreFormattable = "out of %d";
 scoreView.status.bright = "Looking bright";
 scoreView.status.neutral = "Looking neutral";
 scoreView.status.overcast = "Looking overcast";
+
+mainViewController.navigation.title = "ClearScore";
+mainViewController.successView.detailButton = "Find out more";
+mainViewController.failureView.description = "There was a problem loading your data.";
+mainViewController.failureView.button = "Tap to try again";

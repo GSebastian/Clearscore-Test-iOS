@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clearscore_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Clearscore_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y59-Cg-tUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="iEK-3a-ZgY"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oXC-Hh-e7y">
-                                <rect key="frame" x="20" y="452.5" width="374" height="1"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oXC-Hh-e7y">
+                                <rect key="frame" x="20" y="447.5" width="374" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" placeholder="YES" id="LBt-KL-tu1"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oXC-Hh-e7y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AwG-5c-VbD"/>
-                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WJN-pi-VW6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oXC-Hh-e7y" secondAttribute="bottom" id="gNe-EV-B0h"/>
+                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Y59-Cg-tUd" secondAttribute="bottom" id="WJN-pi-VW6"/>
+                            <constraint firstItem="iEK-3a-ZgY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oXC-Hh-e7y" secondAttribute="bottom" id="gNe-EV-B0h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oXC-Hh-e7y" secondAttribute="trailing" id="qnK-bA-v0E"/>
-                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zs0-92-Nck"/>
+                            <constraint firstItem="oXC-Hh-e7y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zs0-92-Nck"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
+                        <outlet property="activityIndicatorView" destination="Jix-ON-d8u" id="HaF-MI-8H5"/>
                         <outlet property="contentWrapperView" destination="oXC-Hh-e7y" id="tql-1h-DXh"/>
+                        <outlet property="failureButton" destination="MT3-5x-xv8" id="xMh-fL-KN9"/>
+                        <outlet property="failureLabel" destination="s5E-kb-PRd" id="6Wo-bY-pJe"/>
+                        <outlet property="failureWrapperView" destination="cyz-Ub-llb" id="UZJ-Dx-elG"/>
+                        <outlet property="scoreDetailButton" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
                         <outlet property="scoreView" destination="fk9-4h-tZT" id="zbm-A1-Mfw"/>
-                        <outlet property="scoreWrapper" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
+                        <outlet property="scoreWrapperView" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="Jix-ON-d8u">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="16" id="kcm-eG-xf6" userLabel="Score Wrapper">
                     <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -67,6 +77,29 @@
                             <state key="normal" title="(Find out more)">
                                 <color key="titleColor" systemColor="systemOrangeColor"/>
                             </state>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" id="cyz-Ub-llb" userLabel="Failure Wrapper">
+                    <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(There was a problem loading your data. Please try again)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s5E-kb-PRd" userLabel="Failure Label">
+                            <rect key="frame" x="4" y="0.0" width="102.5" height="101.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemOrangeColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT3-5x-xv8" userLabel="Failure Button">
+                            <rect key="frame" x="8.5" y="101.5" width="94" height="98.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="(Try again)">
+                                <color key="titleColor" systemColor="systemOrangeColor"/>
+                            </state>
+                            <connections>
+                                <action selector="failureButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eb9-tN-EzF"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

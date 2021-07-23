@@ -34,13 +34,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
+                        <outlet property="activityIndicatorView" destination="Jix-ON-d8u" id="HaF-MI-8H5"/>
                         <outlet property="contentWrapperView" destination="oXC-Hh-e7y" id="tql-1h-DXh"/>
+                        <outlet property="scoreDetailButton" destination="nhP-Fc-i3R" id="r4b-h1-jP5"/>
                         <outlet property="scoreView" destination="fk9-4h-tZT" id="zbm-A1-Mfw"/>
-                        <outlet property="scoreWrapper" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
+                        <outlet property="scoreWrapperView" destination="kcm-eG-xf6" id="qOf-ql-rWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="Jix-ON-d8u">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="16" id="kcm-eG-xf6" userLabel="Score Wrapper">
                     <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

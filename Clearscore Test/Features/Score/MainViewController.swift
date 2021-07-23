@@ -14,9 +14,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var contentWrapperView: UIStackView!
     
-    @IBOutlet weak var scoreWrapper: UIStackView!
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+    
+    @IBOutlet weak var scoreWrapperView: UIStackView!
     @IBOutlet weak var scoreView: ScoreView!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var scoreDetailButton: UIButton!
     
     // MARK: - Properties
         
@@ -31,6 +33,7 @@ class MainViewController: UIViewController {
 
             }
             if isViewLoaded { viewModel.fetchScore() }
+            title = viewModel.navigationTitle
         }
     }
     
@@ -41,6 +44,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        contentWrapperView.setChild(activityIndicatorView)
+        
         viewModel?.viewDidLoad()
     }
     
@@ -49,15 +54,13 @@ class MainViewController: UIViewController {
         
         scoreViewModel.animationCompletionHandler = { [weak self] in
             UIView.animate(withDuration: 0.4) {
-                self?.button.isHidden = false
-                self?.button.layoutIfNeeded()
+                self?.scoreDetailButton.isHidden = false
+                self?.scoreDetailButton.layoutIfNeeded()
             }
         }
         scoreView.viewModel = scoreViewModel
-        button.setTitle(buttonText, for: .normal)
+        scoreDetailButton.setTitle(buttonText, for: .normal)
         
-        if !contentWrapperView.arrangedSubviews.contains(self.scoreWrapper) {
-            self.contentWrapperView.addArrangedSubview(self.scoreWrapper)
-        }
+        self.contentWrapperView.setChild(scoreWrapperView)
     }
 }

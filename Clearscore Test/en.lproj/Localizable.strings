@@ -13,4 +13,5 @@ scoreView.status.bright = "Looking bright";
 scoreView.status.neutral = "Looking neutral";
 scoreView.status.overcast = "Looking overcast";
 
-mainViewController.successView.button = "Find out more";
+mainViewController.navigation.title = "ClearScore";
+mainViewController.successView.detailButton = "Find out more";

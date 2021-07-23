@@ -12,11 +12,11 @@ class MainViewModel {
 
     // MARK: - Properties
     
+    var navigationTitle = NSLocalizedString("mainViewController.navigation.title", comment: "")
     var creditSuccessHandler: ((ScoreViewModel, String) -> Void)?
     var creditFailureHandler: (() -> Void)?
     
     private var creditService: CreditServiceProtocol
-    
     private var cancellable: AnyCancellable?
 
     // MARK: - Init
@@ -68,7 +68,7 @@ class MainViewModel {
             maxScoreText: formattedMaxScoreText,
             scoreStatusText: NSLocalizedString("scoreView.status.bright", comment: ""))
 
-        let buttonText = NSLocalizedString("mainViewController.successView.button", comment: "")
+        let buttonText = NSLocalizedString("mainViewController.successView.detailButton", comment: "")
 
         return (viewModel, buttonText)
     }

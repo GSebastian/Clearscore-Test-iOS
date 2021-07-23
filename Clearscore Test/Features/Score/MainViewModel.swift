@@ -14,7 +14,7 @@ class MainViewModel {
     
     var navigationTitle = NSLocalizedString("mainViewController.navigation.title", comment: "")
     var creditSuccessHandler: ((ScoreViewModel, String) -> Void)?
-    var creditFailureHandler: (() -> Void)?
+    var creditFailureHandler: ((String, String) -> Void)?
     
     private var creditService: CreditServiceProtocol
     private var cancellable: AnyCancellable?
@@ -36,7 +36,8 @@ class MainViewModel {
             guard let self = self else { return }
             switch completion {
             case .failure:
-                self.creditFailureHandler?()
+                let failureViewConfig = self.failureViewConfiguration()
+                self.creditFailureHandler?(failureViewConfig.description, failureViewConfig.buttonTitle)
             default:
                 break
             }
@@ -44,11 +45,12 @@ class MainViewModel {
             guard let self = self else { return }
             
             let successViewConfig = self.successViewConfiguration(fromResponse: response)
-            self.creditSuccessHandler?(successViewConfig.0, successViewConfig.1)
+            self.creditSuccessHandler?(successViewConfig.scoreViewModel, successViewConfig.buttonTitle)
         }
     }
     
-    private func successViewConfiguration(fromResponse response: CreditResponse) -> (ScoreViewModel, String) {
+    private func successViewConfiguration(
+        fromResponse response: CreditResponse) -> (scoreViewModel: ScoreViewModel, buttonTitle: String) {
         
         let scoreTextWithPlaceholder =
             NSLocalizedString("scoreView.scoreFormattable", comment: "")
@@ -71,5 +73,12 @@ class MainViewModel {
         let buttonText = NSLocalizedString("mainViewController.successView.detailButton", comment: "")
 
         return (viewModel, buttonText)
+    }
+    
+    private func failureViewConfiguration() -> (description: String, buttonTitle: String) {
+        (
+            NSLocalizedString("mainViewController.failureView.description", comment: ""),
+            NSLocalizedString("mainViewController.failureView.button", comment: "")
+        )
     }
 }

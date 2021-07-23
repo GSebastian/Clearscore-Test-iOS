@@ -10,7 +10,7 @@ import UIKit
 extension UIStackView {
     
     func setChild(_ view: UIView) {
-        guard !arrangedSubviews.contains(view) else { return }
+        guard !(arrangedSubviews.contains(view) && arrangedSubviews.count == 1) else { return }
         arrangedSubviews.forEach({ $0.removeFromSuperview() })
         addArrangedSubview(view)
     }

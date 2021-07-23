@@ -15,3 +15,5 @@ scoreView.status.overcast = "Looking overcast";
 
 mainViewController.navigation.title = "ClearScore";
 mainViewController.successView.detailButton = "Find out more";
+mainViewController.failureView.description = "There was a problem loading your data.";
+mainViewController.failureView.button = "Please try again";

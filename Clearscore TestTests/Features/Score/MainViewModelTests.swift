@@ -22,7 +22,7 @@ class MainViewModelTests: XCTestCase {
         sut.creditSuccessHandler = { _, _ in
             successHandlerCounter += 1
         }
-        sut.creditFailureHandler = {
+        sut.creditFailureHandler = { _, _ in
             failureHandlerCounter += 1
         }
         
@@ -71,4 +71,6 @@ class MainViewModelTests: XCTestCase {
         // Note for interviewer: Skipping some properties for brevity
         XCTAssertEqual(capturedButtonText, "Find out more")
     }
+    
+    // Note for interviewer: failure handler test skipped, would have one in production
 }

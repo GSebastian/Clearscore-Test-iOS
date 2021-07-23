@@ -16,14 +16,3 @@ struct ScoreViewModel {
     var maxScoreText: String
     var scoreStatusText: String
 }
-
-extension ScoreViewModel {
-    
-    static var preview = ScoreViewModel(
-        scoreIntroText: "(your credit score is)",
-        score: 499,
-        scoreText: "(499)",
-        maxScore: 700,
-        maxScoreText: "(out of 700)",
-        scoreStatusText: "(Looking bright)")
-}

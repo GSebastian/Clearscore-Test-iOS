@@ -34,6 +34,10 @@ class ScoreView: UIView {
     // MARK: - Computed Properties
     
     private var angle: CGFloat {
+        guard let viewModel = viewModel else {
+            preconditionFailure(MVVMError.missingViewModel.errorDescription ?? "")
+        }
+        
         let angleStartingAt3 = CGFloat(viewModel.score) * 2.0 * CGFloat.pi / CGFloat(viewModel.maxScore)
         let angleStartingAt12 = angleStartingAt3 - (CGFloat.pi / 2)
         return angleStartingAt12
@@ -47,9 +51,11 @@ class ScoreView: UIView {
     
     private let circleLayer = CAShapeLayer()
     
-    var viewModel: ScoreViewModel = .preview {
+    var viewModel: ScoreViewModel? = nil {
         didSet {
-            initSubviews()
+            initLabels()
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     
@@ -85,17 +91,17 @@ class ScoreView: UIView {
         addSubview(rootView)
         rootView.frame = bounds
         rootView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        initSubviews()
     }
     
-    private func initSubviews() {
+    private func initLabels() {
+        guard let viewModel = viewModel else {
+            preconditionFailure(MVVMError.missingViewModel.errorDescription ?? "")
+        }
+        
         scoreIntroLabel.text = viewModel.scoreIntroText
         scoreLabel.text = viewModel.scoreText
         maxScoreLabel.text = viewModel.maxScoreText
         scoreStatusLabel.text = viewModel.scoreStatusText
-        
-        drawCircle()
     }
     
     private func drawCircle() {

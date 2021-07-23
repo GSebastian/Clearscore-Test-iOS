@@ -62,7 +62,6 @@ class ScoreView: UIView {
     var animationCompletionHandler: (() -> Void)?
     
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadView()
@@ -127,7 +126,7 @@ class ScoreView: UIView {
     
     private func animate() {
         guard !UIAccessibility.isReduceMotionEnabled else {
-            animationCompletionHandler?()
+            viewModel?.animationCompleted()
             return
         }
         
@@ -153,7 +152,7 @@ class ScoreView: UIView {
         
         CATransaction.begin()
         CATransaction.setCompletionBlock { [weak self] in
-            self?.animationCompletionHandler?()
+            self?.viewModel?.animationCompleted()
         }
         circleLayer.add(createDialAnimation(), forKey: Self.circleAnimationKey)
         allLabels.forEach { $0.layer.add(createLabelsAnimation(), forKey: Self.labelAnimationKey) }

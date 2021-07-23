@@ -15,4 +15,10 @@ struct ScoreViewModel {
     var maxScore: Int
     var maxScoreText: String
     var scoreStatusText: String
+    
+    var animationCompletionHandler: (() -> Void)?
+    
+    func animationCompleted() {
+        animationCompletionHandler?()
+    }
 }

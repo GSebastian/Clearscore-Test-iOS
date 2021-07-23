@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             print("Completed")
         } receiveValue: { [weak self] response in
             guard let self = self else { return }
-                        
+            
             let scoreTextWithPlaceholder = NSLocalizedString("scoreView.scoreFormattable", comment: "")
             let formattedScoreText = String(format: scoreTextWithPlaceholder, response.creditReportInfo.score)
             
@@ -38,18 +38,16 @@ class ViewController: UIViewController {
                 scoreText: formattedScoreText,
                 maxScore: response.creditReportInfo.maxScoreValue,
                 maxScoreText: formattedMaxScoreText,
-                scoreStatusText: NSLocalizedString("scoreView.status.bright", comment: ""))
-            
-            self.scoreView.viewModel = viewModel
-            
-            self.contentWrapperView.addArrangedSubview(self.scoreWrapper)
-
-            self.scoreView.animationCompletionHandler = { [unowned self] in
+                scoreStatusText: NSLocalizedString("scoreView.status.bright", comment: "")) {
                 UIView.animate(withDuration: 0.3) {
                     self.button.isHidden = false
                     self.button.layoutIfNeeded()
                 }
             }
+            
+            self.scoreView.viewModel = viewModel
+            
+            self.contentWrapperView.addArrangedSubview(self.scoreWrapper)
         }
     }
 }

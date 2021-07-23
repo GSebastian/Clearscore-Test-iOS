@@ -11,9 +11,10 @@
 		96BC6B8A26A9E23700C6A8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96BC6B8C26A9E23700C6A8CB /* Localizable.strings */; };
 		96BC6B9326AA2C8D00C6A8CB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC6B9226AA2C8D00C6A8CB /* Errors.swift */; };
 		96D6526726AAF26D001CED94 /* ScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6526626AAF26D001CED94 /* ScoreViewModelTests.swift */; };
+		96D6526926AAF948001CED94 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6526826AAF948001CED94 /* MainViewModel.swift */; };
 		96FD1B6B26A7664700C8C5C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6A26A7664700C8C5C6 /* AppDelegate.swift */; };
 		96FD1B6D26A7664700C8C5C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6C26A7664700C8C5C6 /* SceneDelegate.swift */; };
-		96FD1B6F26A7664700C8C5C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6E26A7664700C8C5C6 /* ViewController.swift */; };
+		96FD1B6F26A7664700C8C5C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6E26A7664700C8C5C6 /* MainViewController.swift */; };
 		96FD1B7226A7664700C8C5C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD1B7026A7664700C8C5C6 /* Main.storyboard */; };
 		96FD1B7426A7664900C8C5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FD1B7326A7664900C8C5C6 /* Assets.xcassets */; };
 		96FD1B7726A7664900C8C5C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FD1B7526A7664900C8C5C6 /* LaunchScreen.storyboard */; };
@@ -50,10 +51,11 @@
 		96BC6B9026A9ED6300C6A8CB /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96BC6B9226AA2C8D00C6A8CB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		96D6526626AAF26D001CED94 /* ScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModelTests.swift; sourceTree = "<group>"; };
+		96D6526826AAF948001CED94 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		96FD1B6726A7664700C8C5C6 /* Clearscore Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clearscore Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD1B6A26A7664700C8C5C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FD1B6C26A7664700C8C5C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96FD1B6E26A7664700C8C5C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96FD1B6E26A7664700C8C5C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		96FD1B7126A7664700C8C5C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96FD1B7326A7664900C8C5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96FD1B7626A7664900C8C5C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,49 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		96D6526A26AAFA64001CED94 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				96D6526B26AAFA68001CED94 /* Score */,
+				96D6526C26AAFA6C001CED94 /* Details */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		96D6526B26AAFA68001CED94 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				96FD1B6E26A7664700C8C5C6 /* MainViewController.swift */,
+				96D6526826AAF948001CED94 /* MainViewModel.swift */,
+			);
+			path = Score;
+			sourceTree = "<group>";
+		};
+		96D6526C26AAFA6C001CED94 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		96D6526D26AAFAAE001CED94 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96FD1BAF26A8B73B00C8C5C6 /* ScoreView.swift */,
+				96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */,
+				96FD1BAD26A8B72900C8C5C6 /* ScoreView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96D6526E26AAFAC0001CED94 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96D6526626AAF26D001CED94 /* ScoreViewModelTests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		96FD1B5E26A7664700C8C5C6 = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +175,13 @@
 		96FD1B6926A7664700C8C5C6 /* Clearscore Test */ = {
 			isa = PBXGroup;
 			children = (
-				96BC6B9126AA2C7F00C6A8CB /* Utils */,
+				96D6526A26AAFA64001CED94 /* Features */,
 				96FD1B9B26A768D000C8C5C6 /* Network */,
 				96FD1B9A26A767AA00C8C5C6 /* Supporting files */,
-				96FD1B6E26A7664700C8C5C6 /* ViewController.swift */,
-				96FD1B7026A7664700C8C5C6 /* Main.storyboard */,
-				96FD1BAD26A8B72900C8C5C6 /* ScoreView.xib */,
-				96FD1BAF26A8B73B00C8C5C6 /* ScoreView.swift */,
-				96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */,
+				96BC6B9126AA2C7F00C6A8CB /* Utils */,
+				96D6526D26AAFAAE001CED94 /* Views */,
 				96BC6B8C26A9E23700C6A8CB /* Localizable.strings */,
+				96FD1B7026A7664700C8C5C6 /* Main.storyboard */,
 			);
 			path = "Clearscore Test";
 			sourceTree = "<group>";
@@ -147,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				96FD1BA826A77D5C00C8C5C6 /* Network */,
+				96D6526E26AAFAC0001CED94 /* Views */,
 				96FD1B8326A7664900C8C5C6 /* Info.plist */,
-				96D6526626AAF26D001CED94 /* ScoreViewModelTests.swift */,
 			);
 			path = "Clearscore TestTests";
 			sourceTree = "<group>";
@@ -336,7 +379,7 @@
 			files = (
 				96FD1BA226A7694400C8C5C6 /* CreditReportInfo.swift in Sources */,
 				96FD1BB026A8B73B00C8C5C6 /* ScoreView.swift in Sources */,
-				96FD1B6F26A7664700C8C5C6 /* ViewController.swift in Sources */,
+				96FD1B6F26A7664700C8C5C6 /* MainViewController.swift in Sources */,
 				96FD1BA026A7692400C8C5C6 /* CreditResponse.swift in Sources */,
 				96FD1B6B26A7664700C8C5C6 /* AppDelegate.swift in Sources */,
 				96FD1BA426A7697800C8C5C6 /* CoachingSummary.swift in Sources */,
@@ -344,6 +387,7 @@
 				96BC6B8526A9A78D00C6A8CB /* ScoreViewModel.swift in Sources */,
 				96FD1B9D26A768F500C8C5C6 /* CreditService.swift in Sources */,
 				96FD1B6D26A7664700C8C5C6 /* SceneDelegate.swift in Sources */,
+				96D6526926AAF948001CED94 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

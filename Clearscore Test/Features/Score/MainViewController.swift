@@ -30,9 +30,11 @@ class MainViewController: UIViewController {
             viewModel.creditFailureHandler = { [weak self] in
 
             }
-            if isViewLoaded { viewModel.viewDidLoad() }
+            if isViewLoaded { viewModel.fetchScore() }
         }
     }
+    
+    var coordinatorDelegate: MainCoordinatorProtocol?
     
     // MARK: View Controller
     
@@ -45,14 +47,17 @@ class MainViewController: UIViewController {
     private func initScoreView(scoreViewModel: ScoreViewModel,
                                buttonText: String) {
         
-        viewModel?.scoreViewModel?.animationCompletionHandler = { [weak self] in
-            UIView.animate(withDuration: 0.3) {
+        scoreViewModel.animationCompletionHandler = { [weak self] in
+            UIView.animate(withDuration: 0.4) {
                 self?.button.isHidden = false
                 self?.button.layoutIfNeeded()
             }
         }
-        scoreView.viewModel = viewModel?.scoreViewModel
+        scoreView.viewModel = scoreViewModel
         button.setTitle(buttonText, for: .normal)
-        self.contentWrapperView.addArrangedSubview(self.scoreWrapper)
+        
+        if !contentWrapperView.arrangedSubviews.contains(self.scoreWrapper) {
+            self.contentWrapperView.addArrangedSubview(self.scoreWrapper)
+        }
     }
 }

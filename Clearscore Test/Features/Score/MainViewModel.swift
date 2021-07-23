@@ -10,14 +10,20 @@ import Foundation
 
 class MainViewModel {
 
-    var scoreViewModel: ScoreViewModel?
+    // MARK: - Properties
+    
     var creditSuccessHandler: ((ScoreViewModel, String) -> Void)?
     var creditFailureHandler: (() -> Void)?
     
     private var cancellable: AnyCancellable?
 
+    // MARK: - VC Lifecycle
+    
     func viewDidLoad() {
-        
+        fetchScore()
+    }
+    
+    func fetchScore() {
         self.cancellable = CreditService.getCreditData().sink { completion in
             
         } receiveValue: { [weak self] response in
@@ -28,7 +34,7 @@ class MainViewModel {
         }
     }
     
-    func successViewConfiguration(fromResponse response: CreditResponse) -> (ScoreViewModel, String) {
+    private func successViewConfiguration(fromResponse response: CreditResponse) -> (ScoreViewModel, String) {
         
         let scoreTextWithPlaceholder =
             NSLocalizedString("scoreView.scoreFormattable", comment: "")

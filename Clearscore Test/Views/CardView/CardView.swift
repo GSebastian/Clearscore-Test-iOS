@@ -49,11 +49,6 @@ class CardView: UIView {
         
         layer.cornerRadius = 10
         rootView.layer.cornerRadius = 10
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 12
-        layer.shadowOpacity = 0.1
-        layer.shadowOffset = .zero
     }
     
     private func initLabels() {

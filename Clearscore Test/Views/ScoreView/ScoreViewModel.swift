@@ -9,12 +9,12 @@ import Foundation
 
 class ScoreViewModel {
     
-    var scoreIntroText: String
-    var score: Int
-    var scoreText:  String
-    var maxScore: Int
-    var maxScoreText: String
-    var scoreStatusText: String
+    let scoreIntroText: String
+    let score: Int
+    let scoreText:  String
+    let maxScore: Int
+    let maxScoreText: String
+    let scoreStatusText: String
     var animationCompletionHandler: (() -> Void)?
     
     init(scoreIntroText: String,

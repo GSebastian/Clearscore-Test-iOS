@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     
     @IBOutlet var cardViews: [UIView]!
+    
     // MARK: - Properties
     
     // MARK: - View Controller
@@ -24,7 +25,7 @@ class DetailsViewController: UIViewController {
         cardViews.forEach { cardView in
             cardView.layer.cornerRadius = 8
             cardView.layer.shadowColor = UIColor.black.cgColor
-            cardView.layer.shadowOpacity = 0.2
+            cardView.layer.shadowOpacity = 0.1 
             cardView.layer.shadowOffset = .zero
             cardView.layer.shadowRadius = 8
         }

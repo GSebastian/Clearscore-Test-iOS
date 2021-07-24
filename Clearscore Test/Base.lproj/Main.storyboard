@@ -122,21 +122,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-0p-Gg2" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1324.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="834.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0O-KR-eSv" userLabel="Tinted Background View">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="266.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="274.5"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="eLJ-bZ-eCn">
-                                                <rect key="frame" x="20" y="76" width="374" height="1214.5"/>
+                                                <rect key="frame" x="20" y="84" width="374" height="734.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AbD-c4-FGO">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="94.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Your score is 499)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ze-LV-UZI">
                                                                 <rect key="frame" x="56" y="0.0" width="262.5" height="38.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="32"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </label>
@@ -148,53 +148,32 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62h-fE-QW1">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62h-fE-QW1" customClass="CardView" customModule="Clearscore_Test" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="126.5" width="374" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="mlO-tf-5nt"/>
+                                                            <constraint firstAttribute="height" constant="128" placeholder="YES" id="mlO-tf-5nt"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-hh-55a">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-hh-55a" customClass="CardView" customModule="Clearscore_Test" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="286.5" width="374" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="MZr-8k-avd"/>
+                                                            <constraint firstAttribute="height" constant="128" placeholder="YES" id="MZr-8k-avd"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wO-ox-I3d">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wO-ox-I3d" customClass="CardView" customModule="Clearscore_Test" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="446.5" width="374" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="YyJ-zg-l2T"/>
+                                                            <constraint firstAttribute="height" constant="128" placeholder="YES" id="YyJ-zg-l2T"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-vv-5Sm">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-vv-5Sm" customClass="CardView" customModule="Clearscore_Test" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="606.5" width="374" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="lUe-Jz-Qws"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UD6-7V-hvg">
-                                                        <rect key="frame" x="0.0" y="766.5" width="374" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="iCC-Lb-uPf"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-0w-B6N">
-                                                        <rect key="frame" x="0.0" y="926.5" width="374" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="ZBA-bB-abW"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fe-4S-snK">
-                                                        <rect key="frame" x="0.0" y="1086.5" width="374" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="iXj-Uz-yvd"/>
+                                                            <constraint firstAttribute="height" constant="128" placeholder="YES" id="lUe-Jz-Qws"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -209,7 +188,7 @@
                                             <constraint firstItem="F0O-KR-eSv" firstAttribute="bottom" secondItem="62h-fE-QW1" secondAttribute="centerY" id="WiI-Rw-t7x"/>
                                             <constraint firstItem="eLJ-bZ-eCn" firstAttribute="top" secondItem="JXb-0p-Gg2" secondAttribute="topMargin" constant="32" id="nKd-uB-Fd7"/>
                                             <constraint firstItem="F0O-KR-eSv" firstAttribute="leading" secondItem="JXb-0p-Gg2" secondAttribute="leading" id="nzY-tN-Gtv"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="eLJ-bZ-eCn" secondAttribute="bottom" id="t0v-cQ-Iia"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="eLJ-bZ-eCn" secondAttribute="bottom" constant="8" id="t0v-cQ-Iia"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -241,9 +220,6 @@
                         <outletCollection property="cardViews" destination="oKd-hh-55a" collectionClass="NSMutableArray" id="54p-7f-xGA"/>
                         <outletCollection property="cardViews" destination="0wO-ox-I3d" collectionClass="NSMutableArray" id="AJt-VF-7x4"/>
                         <outletCollection property="cardViews" destination="fkf-vv-5Sm" collectionClass="NSMutableArray" id="IjN-ee-W0P"/>
-                        <outletCollection property="cardViews" destination="UD6-7V-hvg" collectionClass="NSMutableArray" id="LBk-mt-SPb"/>
-                        <outletCollection property="cardViews" destination="RHx-0w-B6N" collectionClass="NSMutableArray" id="vlT-9q-0dI"/>
-                        <outletCollection property="cardViews" destination="6fe-4S-snK" collectionClass="NSMutableArray" id="X1x-xo-zdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0s-3c-Cu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

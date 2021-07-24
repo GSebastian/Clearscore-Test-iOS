@@ -18,6 +18,9 @@
 		9607B5E426AB67A00034131F /* DetailsViewRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5E326AB67A00034131F /* DetailsViewRobot.swift */; };
 		9607B5E626AB7D5F0034131F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5E526AB7D5F0034131F /* DetailsViewController.swift */; };
 		9607B5E826AB7D690034131F /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5E726AB7D690034131F /* DetailsViewModel.swift */; };
+		9607B5EC26AB8E710034131F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5EB26AB8E710034131F /* CardView.swift */; };
+		9607B5EE26AB8E770034131F /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9607B5ED26AB8E770034131F /* CardViewModel.swift */; };
+		9607B5F026AB8E830034131F /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9607B5EF26AB8E830034131F /* CardView.xib */; };
 		96BC6B8526A9A78D00C6A8CB /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */; };
 		96BC6B8A26A9E23700C6A8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96BC6B8C26A9E23700C6A8CB /* Localizable.strings */; };
 		96BC6B9326AA2C8D00C6A8CB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC6B9226AA2C8D00C6A8CB /* Errors.swift */; };
@@ -71,6 +74,9 @@
 		9607B5E326AB67A00034131F /* DetailsViewRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewRobot.swift; sourceTree = "<group>"; };
 		9607B5E526AB7D5F0034131F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9607B5E726AB7D690034131F /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		9607B5EB26AB8E710034131F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9607B5ED26AB8E770034131F /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		9607B5EF26AB8E830034131F /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		96BC6B8B26A9E23700C6A8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96BC6B9026A9ED6300C6A8CB /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -178,6 +184,26 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		9607B5E926AB8E5E0034131F /* ScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				96FD1BAF26A8B73B00C8C5C6 /* ScoreView.swift */,
+				96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */,
+				96FD1BAD26A8B72900C8C5C6 /* ScoreView.xib */,
+			);
+			path = ScoreView;
+			sourceTree = "<group>";
+		};
+		9607B5EA26AB8E660034131F /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				9607B5EB26AB8E710034131F /* CardView.swift */,
+				9607B5ED26AB8E770034131F /* CardViewModel.swift */,
+				9607B5EF26AB8E830034131F /* CardView.xib */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
 		96BC6B9126AA2C7F00C6A8CB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,9 +244,8 @@
 		96D6526D26AAFAAE001CED94 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				96FD1BAF26A8B73B00C8C5C6 /* ScoreView.swift */,
-				96BC6B8426A9A78D00C6A8CB /* ScoreViewModel.swift */,
-				96FD1BAD26A8B72900C8C5C6 /* ScoreView.xib */,
+				9607B5EA26AB8E660034131F /* CardView */,
+				9607B5E926AB8E5E0034131F /* ScoreView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +473,7 @@
 			files = (
 				96BC6B8A26A9E23700C6A8CB /* Localizable.strings in Resources */,
 				96FD1B7726A7664900C8C5C6 /* LaunchScreen.storyboard in Resources */,
+				9607B5F026AB8E830034131F /* CardView.xib in Resources */,
 				96FD1BAE26A8B72900C8C5C6 /* ScoreView.xib in Resources */,
 				96FD1B7426A7664900C8C5C6 /* Assets.xcassets in Resources */,
 				96FD1B7226A7664700C8C5C6 /* Main.storyboard in Resources */,
@@ -479,9 +505,11 @@
 				96FD1BA226A7694400C8C5C6 /* CreditReportInfo.swift in Sources */,
 				96FD1BB026A8B73B00C8C5C6 /* ScoreView.swift in Sources */,
 				96FD1B6F26A7664700C8C5C6 /* MainViewController.swift in Sources */,
+				9607B5EE26AB8E770034131F /* CardViewModel.swift in Sources */,
 				96FD1BA026A7692400C8C5C6 /* CreditResponse.swift in Sources */,
 				96FD1B6B26A7664700C8C5C6 /* AppDelegate.swift in Sources */,
 				96FD1BA426A7697800C8C5C6 /* CoachingSummary.swift in Sources */,
+				9607B5EC26AB8E710034131F /* CardView.swift in Sources */,
 				96BC6B9326AA2C8D00C6A8CB /* Errors.swift in Sources */,
 				96BC6B8526A9A78D00C6A8CB /* ScoreViewModel.swift in Sources */,
 				9607B5E626AB7D5F0034131F /* DetailsViewController.swift in Sources */,

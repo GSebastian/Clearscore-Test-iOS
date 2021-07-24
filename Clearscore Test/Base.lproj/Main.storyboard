@@ -188,7 +188,6 @@
                                             <constraint firstItem="F0O-KR-eSv" firstAttribute="bottom" secondItem="62h-fE-QW1" secondAttribute="centerY" id="WiI-Rw-t7x"/>
                                             <constraint firstItem="eLJ-bZ-eCn" firstAttribute="top" secondItem="JXb-0p-Gg2" secondAttribute="topMargin" constant="32" id="nKd-uB-Fd7"/>
                                             <constraint firstItem="F0O-KR-eSv" firstAttribute="leading" secondItem="JXb-0p-Gg2" secondAttribute="leading" id="nzY-tN-Gtv"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="eLJ-bZ-eCn" secondAttribute="bottom" priority="100" constant="8" id="t0v-cQ-Iia"/>
                                         </constraints>
                                     </view>
                                 </subviews>

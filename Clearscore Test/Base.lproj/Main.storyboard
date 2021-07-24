@@ -122,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXb-0p-Gg2" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="834.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0O-KR-eSv" userLabel="Tinted Background View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="274.5"/>
@@ -188,7 +188,7 @@
                                             <constraint firstItem="F0O-KR-eSv" firstAttribute="bottom" secondItem="62h-fE-QW1" secondAttribute="centerY" id="WiI-Rw-t7x"/>
                                             <constraint firstItem="eLJ-bZ-eCn" firstAttribute="top" secondItem="JXb-0p-Gg2" secondAttribute="topMargin" constant="32" id="nKd-uB-Fd7"/>
                                             <constraint firstItem="F0O-KR-eSv" firstAttribute="leading" secondItem="JXb-0p-Gg2" secondAttribute="leading" id="nzY-tN-Gtv"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="eLJ-bZ-eCn" secondAttribute="bottom" constant="8" id="t0v-cQ-Iia"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="eLJ-bZ-eCn" secondAttribute="bottom" priority="100" constant="8" id="t0v-cQ-Iia"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -215,8 +215,8 @@
                         <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                     </view>
                     <connections>
-                        <outlet property="primaryLabel" destination="9Ze-LV-UZI" id="xAB-ds-2qL"/>
-                        <outlet property="secondaryLabel" destination="9Ze-LV-UZI" id="hLm-BJ-vn4"/>
+                        <outlet property="primaryLabel" destination="9Ze-LV-UZI" id="VFh-q8-Hf6"/>
+                        <outlet property="secondaryLabel" destination="bEd-bf-yvh" id="izI-Bn-GS6"/>
                         <outletCollection property="cardViews" destination="62h-fE-QW1" collectionClass="NSMutableArray" id="mwi-l2-oVg"/>
                         <outletCollection property="cardViews" destination="oKd-hh-55a" collectionClass="NSMutableArray" id="Hml-H3-zMG"/>
                         <outletCollection property="cardViews" destination="0wO-ox-I3d" collectionClass="NSMutableArray" id="Kgx-4R-i0m"/>

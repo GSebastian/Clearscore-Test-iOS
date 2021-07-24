@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     // MARK: - IB Actions
     
     @IBAction func scoreDetailButtonTapped(_ sender: Any) {
-        coordinatorDelegate?.showDetail()
+        viewModel?.scoreDetailButtonTapped()
     }
     
     @IBAction func failureButtonTapped(_ sender: Any) {
@@ -51,9 +51,7 @@ class MainViewController: UIViewController {
             title = viewModel.navigationTitle
         }
     }
-    
-    var coordinatorDelegate: MainCoordinatorProtocol?
-    
+        
     // MARK: View Controller
     
     override func viewDidLoad() {

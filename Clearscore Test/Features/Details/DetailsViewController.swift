@@ -10,24 +10,34 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     // MARK: - IB Outlets
+        
+    @IBOutlet private weak var primaryLabel: UILabel!
+    @IBOutlet private weak var secondaryLabel: UILabel!
     
-    @IBOutlet weak var cardView: UIView!
-    
-    @IBOutlet var cardViews: [UIView]!
+    @IBOutlet private var cardViews: [CardView]!
     
     // MARK: - Properties
+    
+    var viewModel: DetailsViewModel? {
+        didSet {
+            if isViewLoaded { initViews() }
+        }
+    }
     
     // MARK: - View Controller
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardViews.forEach { cardView in
-            cardView.layer.cornerRadius = 8
-            cardView.layer.shadowColor = UIColor.black.cgColor
-            cardView.layer.shadowOpacity = 0.1 
-            cardView.layer.shadowOffset = .zero
-            cardView.layer.shadowRadius = 8
+        initViews()
+    }
+    
+    private func initViews() {
+        guard let viewModel = viewModel else {
+            preconditionFailure(MVVMError.missingViewModel.errorDescription ?? "")
         }
+        zip(cardViews, viewModel.cardViewModels).forEach({ $0.0.viewModel = $0.1 })
+        primaryLabel.text = viewModel.primaryText
+        secondaryLabel.text = viewModel.secondaryText
     }
 }

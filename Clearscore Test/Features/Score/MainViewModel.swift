@@ -17,25 +17,41 @@ class MainViewModel {
     var creditFailureHandler: ((String, String) -> Void)?
     
     private var creditService: CreditServiceProtocol
+    private weak var coordinator: MainCoordinatorProtocol?
     private var cancellable: AnyCancellable?
+    
+    private var creditResponse: CreditResponse?
 
     // MARK: - Init
     
-    init(creditService: CreditServiceProtocol = CreditService()) {
+    init(creditService: CreditServiceProtocol = CreditService(),
+         coordinator: MainCoordinatorProtocol?) {
         self.creditService = creditService
+        self.coordinator = coordinator
     }
     
-    // MARK: - VC Lifecycle
+    // MARK: - VC Inputs
     
     func viewDidLoad() {
         fetchScore()
     }
+    
+    func scoreDetailButtonTapped() {
+        guard let creditResponse = self.creditResponse else {
+            preconditionFailure("creditResponse needs to be non-nil in order for details to be displayed.")
+        }
+        coordinator?.showDetail(creditResponse: creditResponse)
+    }
+    
+    // MARK: - Methods
     
     func fetchScore() {
         self.cancellable = creditService.getCreditData().sink { [weak self] completion in
             guard let self = self else { return }
             switch completion {
             case .failure:
+                self.creditResponse = nil
+                
                 let failureViewConfig = self.failureViewConfiguration()
                 self.creditFailureHandler?(failureViewConfig.description, failureViewConfig.buttonTitle)
             default:
@@ -43,6 +59,8 @@ class MainViewModel {
             }
         } receiveValue: { [weak self] response in
             guard let self = self else { return }
+            
+            self.creditResponse = response
             
             let successViewConfig = self.successViewConfiguration(fromResponse: response)
             self.creditSuccessHandler?(successViewConfig.scoreViewModel, successViewConfig.buttonTitle)

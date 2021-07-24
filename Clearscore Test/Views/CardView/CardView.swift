@@ -47,15 +47,19 @@ class CardView: UIView {
         rootView.frame = bounds
         rootView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        layer.cornerRadius = 8
-        rootView.layer.cornerRadius = 8
+        layer.cornerRadius = 10
+        rootView.layer.cornerRadius = 10
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowRadius = 12
+        layer.shadowOpacity = 0.1
+        layer.shadowOffset = .zero
     }
     
     private func initLabels() {
         guard let viewModel = viewModel else {
             preconditionFailure(MVVMError.missingViewModel.errorDescription ?? "")
         }
-        
         imageView.image = viewModel.image
         primaryLabel.text = viewModel.primaryText
         secondaryLabel.text = viewModel.secondaryText

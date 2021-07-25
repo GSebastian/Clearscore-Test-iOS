@@ -26,42 +26,63 @@ class DetailsViewModel {
         self.secondaryText = NSLocalizedString("detailsViewController.subtitle", comment: "")
     }
     
-    // MARK: - VC Lifecycle
-    
-    func viewDidLoad() {
-        
-    }
-    
     // MARK: - Methods
     
     private static func cardViewModels(fromResponse creditResponse: CreditResponse) -> [CardViewModel] {
-        let card1SecondaryWithPlaceholders = NSLocalizedString("detailsViewController.card1.secondary", comment: "")
-        let card1Secondary = String(format: card1SecondaryWithPlaceholders, creditResponse.creditReportInfo.currentShortTermDebt)
-        let shortTermCreditLimitViewModel = CardViewModel(
-            image: UIImage(systemName: "dollarsign.circle")!,
-            primaryText: NSLocalizedString("detailsViewController.card1.primary", comment: ""),
-            secondaryText: card1Secondary)
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.locale = .current
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "GBP"
+        
+        func cardViewModel(imageName: String,
+                           primaryTextKey: String,
+                           secondaryTextKey: String,
+                           secondaryTextArguments: CVarArg) -> CardViewModel {
+            
+            let secondaryWithPlaceholders =
+                NSLocalizedString(secondaryTextKey, comment: "")
+            let secondaryText = String(
+                format: secondaryWithPlaceholders,
+                secondaryTextArguments)
+            return CardViewModel(
+                image: UIImage(systemName: imageName)!,
+                primaryText: NSLocalizedString(primaryTextKey, comment: ""),
+                secondaryText: secondaryText)
+        }
+        
+        let card1SecondaryNumber = creditResponse.creditReportInfo.currentShortTermCreditLimit
+        let card1SecondaryNumberFormatted = formatter.string(
+            from: NSNumber(value: card1SecondaryNumber)) ?? "\(card1SecondaryNumber)"
+        
+        let shortTermCreditLimitViewModel = cardViewModel(
+            imageName: "dollarsign.circle",
+            primaryTextKey: "detailsViewController.card1.primary",
+            secondaryTextKey: "detailsViewController.card1.secondary",
+            secondaryTextArguments: card1SecondaryNumberFormatted)
+        
+        let creditUtilisationViewModel = cardViewModel(
+            imageName: "banknote",
+            primaryTextKey: "detailsViewController.card2.primary",
+            secondaryTextKey: "detailsViewController.card2.secondary",
+            secondaryTextArguments: creditResponse.creditReportInfo.currentShortTermCreditUtilisation)
 
-        let card2SecondaryWithPlaceholders = NSLocalizedString("detailsViewController.card2.secondary", comment: "")
-        let card2Secondary = String(format: card2SecondaryWithPlaceholders, creditResponse.creditReportInfo.currentShortTermCreditUtilisation)
-        let creditUtilisationViewModel = CardViewModel(
-            image: UIImage(systemName: "banknote")!,
-            primaryText: NSLocalizedString("detailsViewController.card2.primary", comment: ""),
-            secondaryText: card2Secondary)
+        let card3SecondaryNumber =
+            creditResponse.creditReportInfo.currentShortTermDebt
+        let card3SecondaryNumberFormatted =
+            formatter.string(from: NSNumber(value: card3SecondaryNumber)) ?? "\(card3SecondaryNumber)"
+        
+        let shortTermDebtViewModel = cardViewModel(
+            imageName: "clock",
+            primaryTextKey: "detailsViewController.card3.primary",
+            secondaryTextKey: "detailsViewController.card3.secondary",
+            secondaryTextArguments: card3SecondaryNumberFormatted)
 
-        let card3SecondaryWithPlaceholders = NSLocalizedString("detailsViewController.card3.secondary", comment: "")
-        let card3Secondary = String(format: card3SecondaryWithPlaceholders, creditResponse.creditReportInfo.currentShortTermDebt)
-        let shortTermDebtViewModel = CardViewModel(
-            image: UIImage(systemName: "clock")!,
-            primaryText: NSLocalizedString("detailsViewController.card3.primary", comment: ""),
-            secondaryText: card3Secondary)
-
-        let card4SecondaryWithPlaceholders = NSLocalizedString("detailsViewController.card3.secondary", comment: "")
-        let card4Secondary = String(format: card4SecondaryWithPlaceholders, creditResponse.creditReportInfo.daysUntilNextReport)
-        let nextReportViewModel = CardViewModel(
-            image: UIImage(systemName: "doc.text")!,
-            primaryText: NSLocalizedString("detailsViewController.card4.primary", comment: ""),
-            secondaryText: card4Secondary)
+        let nextReportViewModel = cardViewModel(
+            imageName: "doc.text",
+            primaryTextKey: "detailsViewController.card4.primary",
+            secondaryTextKey: "detailsViewController.card4.secondary",
+            secondaryTextArguments: creditResponse.creditReportInfo.daysUntilNextReport)
         
         return [shortTermCreditLimitViewModel, creditUtilisationViewModel, shortTermDebtViewModel, nextReportViewModel]
     }

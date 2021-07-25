@@ -32,8 +32,7 @@ class MainCoordinator: Coordinator {
             preconditionFailure(MVVMError.initFromStoryboard.errorDescription ?? "")
         }
         
-        vc.viewModel = MainViewModel()
-        vc.coordinatorDelegate = self
+        vc.viewModel = MainViewModel(coordinator: self)
        
         let navVC = UINavigationController(rootViewController: vc)
         
@@ -47,7 +46,16 @@ class MainCoordinator: Coordinator {
 
 extension MainCoordinator: MainCoordinatorProtocol {
     
-    func showDetail() {
+    func showDetail(creditResponse: CreditResponse) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        guard
+            let vc = storyboard.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController else {
+            preconditionFailure(MVVMError.initFromStoryboard.errorDescription ?? "")
+        }
+        
+        vc.viewModel = DetailsViewModel(creditResponse: creditResponse)
+        
+        root?.present(vc, animated: true, completion: nil)
     }
 }

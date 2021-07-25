@@ -9,5 +9,5 @@ import Foundation
 
 protocol MainCoordinatorProtocol: AnyObject {
     
-    func showDetail()
+    func showDetail(creditResponse: CreditResponse)
 }

@@ -17,3 +17,16 @@ mainViewController.navigation.title = "ClearScore";
 mainViewController.successView.detailButton = "Afla mai multe";
 mainViewController.failureView.description = "Am intampinat o problema.";
 mainViewController.failureView.button = "Incercati din nou";
+
+detailsViewController.titleFormattable = "Scorul tau este %d";
+detailsViewController.subtitle = "Iata cateva detalii despre scorul tau";
+detailsViewController.card1.primary = "Cat poti imprumuta pe termen scurt";
+detailsViewController.card1.secondary = "Limita ta este %@.";
+detailsViewController.card2.primary = "Ce procentaj folosesti";
+detailsViewController.card2.secondary = "Momentan, folosesti %d procente.";
+detailsViewController.card3.primary = "Datoria pe termen scurt";
+detailsViewController.card3.secondary = "Datoria ta curenta este %@.";
+detailsViewController.card4.primary = "Urmatorul raport";
+// Note for interviewer: This needs `.stringsdict` files instead, because of "1 day" vs "20 days"
+detailsViewController.card4.secondary = "Urmatorul raport va fi in %d zile.";
+

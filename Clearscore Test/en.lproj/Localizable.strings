@@ -17,3 +17,15 @@ mainViewController.navigation.title = "ClearScore";
 mainViewController.successView.detailButton = "Find out more";
 mainViewController.failureView.description = "There was a problem loading your data.";
 mainViewController.failureView.button = "Tap to try again";
+
+detailsViewController.titleFormattable = "Your score is %d";
+detailsViewController.subtitle = "Here are more details from your credit report";
+detailsViewController.card1.primary = "Short term credit limit";
+detailsViewController.card1.secondary = "%@ is your limit for short term credit.";
+detailsViewController.card2.primary = "Credit utilisation";
+detailsViewController.card2.secondary = "Credit utilisation is at %d percent.";
+detailsViewController.card3.primary = "Short term debt";
+detailsViewController.card3.secondary = "Your short term debt is %@.";
+detailsViewController.card4.primary = "Next report";
+// Note for interviewer: This needs `.stringsdict` files instead, because of "1 day" vs "20 days"
+detailsViewController.card4.secondary = "Your next credit report is due in %d days.";

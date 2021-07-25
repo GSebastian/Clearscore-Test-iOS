@@ -26,6 +26,10 @@ class MainViewController: UIViewController {
     
     // MARK: - IB Actions
     
+    @IBAction func scoreDetailButtonTapped(_ sender: Any) {
+        viewModel?.scoreDetailButtonTapped()
+    }
+    
     @IBAction func failureButtonTapped(_ sender: Any) {
         contentWrapperView.insertArrangedSubview(activityIndicatorView, at: 0)
         viewModel?.fetchScore()
@@ -47,9 +51,7 @@ class MainViewController: UIViewController {
             title = viewModel.navigationTitle
         }
     }
-    
-    var coordinatorDelegate: MainCoordinatorProtocol?
-    
+        
     // MARK: View Controller
     
     override func viewDidLoad() {

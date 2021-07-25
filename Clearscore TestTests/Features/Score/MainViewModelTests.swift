@@ -18,7 +18,7 @@ class MainViewModelTests: XCTestCase {
         let mockCreditService = MockCreditService()
         mockCreditService.response = .defaultStub
         
-        let sut = MainViewModel(creditService: mockCreditService)
+        let sut = MainViewModel(creditService: mockCreditService, coordinatorDelegate: nil)
         sut.creditSuccessHandler = { _, _ in
             successHandlerCounter += 1
         }
@@ -57,7 +57,7 @@ class MainViewModelTests: XCTestCase {
         var capturedScoreViewModel: ScoreViewModel!
         var capturedButtonText: String!
         
-        let sut = MainViewModel(creditService: mockCreditService)
+        let sut = MainViewModel(creditService: mockCreditService, coordinatorDelegate: nil)
         sut.creditSuccessHandler = { scoreViewModel, buttonText in
             capturedScoreViewModel = scoreViewModel
             capturedButtonText = buttonText

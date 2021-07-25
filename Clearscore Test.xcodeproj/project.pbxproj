@@ -28,7 +28,7 @@
 		96D6526926AAF948001CED94 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6526826AAF948001CED94 /* MainViewModel.swift */; };
 		96D6527126AB1403001CED94 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6527026AB1403001CED94 /* Coordinator.swift */; };
 		96D6527326AB1427001CED94 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6527226AB1427001CED94 /* MainCoordinator.swift */; };
-		96D6527526AB14EB001CED94 /* MainCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6527426AB14EB001CED94 /* MainCoordinatorProtocol.swift */; };
+		96D6527526AB14EB001CED94 /* MainCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6527426AB14EB001CED94 /* MainCoordinatorDelegate.swift */; };
 		96FD1B6B26A7664700C8C5C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6A26A7664700C8C5C6 /* AppDelegate.swift */; };
 		96FD1B6D26A7664700C8C5C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6C26A7664700C8C5C6 /* SceneDelegate.swift */; };
 		96FD1B6F26A7664700C8C5C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD1B6E26A7664700C8C5C6 /* MainViewController.swift */; };
@@ -85,7 +85,7 @@
 		96D6526826AAF948001CED94 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		96D6527026AB1403001CED94 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		96D6527226AB1427001CED94 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		96D6527426AB14EB001CED94 /* MainCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		96D6527426AB14EB001CED94 /* MainCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		96FD1B6726A7664700C8C5C6 /* Clearscore Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clearscore Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD1B6A26A7664700C8C5C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FD1B6C26A7664700C8C5C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,7 +227,6 @@
 			children = (
 				96FD1B6E26A7664700C8C5C6 /* MainViewController.swift */,
 				96D6526826AAF948001CED94 /* MainViewModel.swift */,
-				96D6527426AB14EB001CED94 /* MainCoordinatorProtocol.swift */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -263,6 +262,7 @@
 			children = (
 				96D6527026AB1403001CED94 /* Coordinator.swift */,
 				96D6527226AB1427001CED94 /* MainCoordinator.swift */,
+				96D6527426AB14EB001CED94 /* MainCoordinatorDelegate.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 				96FD1B6D26A7664700C8C5C6 /* SceneDelegate.swift in Sources */,
 				9607B5D926AB3F230034131F /* UIStackView+Utils.swift in Sources */,
 				96D6526926AAF948001CED94 /* MainViewModel.swift in Sources */,
-				96D6527526AB14EB001CED94 /* MainCoordinatorProtocol.swift in Sources */,
+				96D6527526AB14EB001CED94 /* MainCoordinatorDelegate.swift in Sources */,
 				9607B5E826AB7D690034131F /* DetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

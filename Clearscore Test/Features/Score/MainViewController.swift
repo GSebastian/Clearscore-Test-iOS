@@ -12,17 +12,22 @@ class MainViewController: UIViewController {
     
     // MARK: - IB Outlets
     
+    // Note for interviewer: I'm using a `UIStackView` with center alignment purely as a way of saving some constraints
+    // setting/removing when adding/removing subviews.
     @IBOutlet weak var contentWrapperView: UIStackView!
     
-    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+    // Loading state
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
-    @IBOutlet weak var failureWrapperView: UIView!
-    @IBOutlet weak var failureLabel: UILabel!
-    @IBOutlet weak var failureButton: UIButton!
+    // Failure state
+    @IBOutlet private weak var failureWrapperView: UIView!
+    @IBOutlet private weak var failureLabel: UILabel!
+    @IBOutlet private weak var failureButton: UIButton!
     
-    @IBOutlet weak var scoreWrapperView: UIStackView!
-    @IBOutlet weak var scoreView: ScoreView!
-    @IBOutlet weak var scoreDetailButton: UIButton!
+    // Success state
+    @IBOutlet private weak var scoreWrapperView: UIStackView!
+    @IBOutlet private weak var scoreView: ScoreView!
+    @IBOutlet private weak var scoreDetailButton: UIButton!
     
     // MARK: - IB Actions
     
@@ -36,10 +41,11 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Properties
-        
+    
     var viewModel: MainViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
+            
             viewModel.creditSuccessHandler = { [weak self] scoreViewModel, buttonText in
                 self?.initScoreView(scoreViewModel: scoreViewModel,
                                     buttonText: buttonText)
@@ -52,7 +58,7 @@ class MainViewController: UIViewController {
         }
     }
         
-    // MARK: View Controller
+    // MARK: - View Controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +85,7 @@ class MainViewController: UIViewController {
     private func initFailureView(descriptionText: String, buttonText: String) {
         failureLabel.text = descriptionText
         failureButton.setTitle(buttonText, for: .normal)
+        
         self.contentWrapperView.setChild(failureWrapperView)
     }
 }

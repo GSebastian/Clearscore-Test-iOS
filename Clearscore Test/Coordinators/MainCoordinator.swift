@@ -25,14 +25,17 @@ class MainCoordinator: Coordinator {
     // MARK: - Methods
     
     func start() {
+        // Note for interviewer: I would usually use xibs in production, as storyboard files don't scale well - they
+        // get really slow to render when there are lots of view controllers on them!
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        // Note for interviewer: I'd probably move L32 to an extension that uses type(of:) to guard against typos
         guard
             let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
             preconditionFailure(MVVMError.initFromStoryboard.errorDescription ?? "")
         }
         
-        vc.viewModel = MainViewModel(coordinator: self)
+        vc.viewModel = MainViewModel(coordinatorDelegate: self)
        
         let navVC = UINavigationController(rootViewController: vc)
         
@@ -42,9 +45,9 @@ class MainCoordinator: Coordinator {
     }
 }
 
-// MARK: - MainCoordinatorProtocol
+// MARK: - MainCoordinatorDelegate
 
-extension MainCoordinator: MainCoordinatorProtocol {
+extension MainCoordinator: MainCoordinatorDelegate {
     
     func showDetail(creditResponse: CreditResponse) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

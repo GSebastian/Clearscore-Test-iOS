@@ -20,5 +20,7 @@ class MainViewTests: XCTestCase {
         
         MainViewRobot()
             .checkAllLabelsExist()
+            .tapDetailButton()
+            .checkAllLabelsExist()
     }
 }

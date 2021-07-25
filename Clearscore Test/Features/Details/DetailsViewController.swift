@@ -7,6 +7,12 @@
 
 import UIKit
 
+// Note for interviewer: With this view controller, I just wanted to showcase a more complex layout created with
+// Auto Layout (UIScrollView, UIStackView). As time was short, I skipped the automated testing for this, and I also din't use a UITableView.
+//
+// Generally, UITableViews carry a lot of (code) overhead, so I don't shy away from UIScrollView whenever the elements
+// in the list are few (in this case only 5 elements in a list that doesn't dynamically grow).
+
 class DetailsViewController: UIViewController {
     
     // MARK: - IB Outlets
@@ -36,6 +42,8 @@ class DetailsViewController: UIViewController {
         guard let viewModel = viewModel else {
             preconditionFailure(MVVMError.missingViewModel.errorDescription ?? "")
         }
+        // Note for interviewer: this isn't super safe, but did it for lack of more time. Probably would at least have
+        // some good tests for this in production.
         zip(cardViews, viewModel.cardViewModels).forEach({ $0.0.viewModel = $0.1 })
         primaryLabel.text = viewModel.primaryText
         secondaryLabel.text = viewModel.secondaryText

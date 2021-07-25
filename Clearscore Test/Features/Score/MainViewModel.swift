@@ -17,7 +17,7 @@ class MainViewModel {
     var creditFailureHandler: ((String, String) -> Void)?
     
     private var creditService: CreditServiceProtocol
-    private weak var coordinator: MainCoordinatorProtocol?
+    private weak var coordinatorDelegate: MainCoordinatorDelegate?
     private var cancellable: AnyCancellable?
     
     private var creditResponse: CreditResponse?
@@ -25,9 +25,9 @@ class MainViewModel {
     // MARK: - Init
     
     init(creditService: CreditServiceProtocol = CreditService(),
-         coordinator: MainCoordinatorProtocol?) {
+         coordinatorDelegate: MainCoordinatorDelegate?) {
         self.creditService = creditService
-        self.coordinator = coordinator
+        self.coordinatorDelegate = coordinatorDelegate
     }
     
     // MARK: - VC Inputs
@@ -37,10 +37,13 @@ class MainViewModel {
     }
     
     func scoreDetailButtonTapped() {
+        // Note for interviewer: I like to use `preconditionFailure` for inconsistent states whenever I have good
+        // automated testing coverage, as it guards against situations where a screen/element isn't performing its
+        // basic functions.
         guard let creditResponse = self.creditResponse else {
             preconditionFailure("creditResponse needs to be non-nil in order for details to be displayed.")
         }
-        coordinator?.showDetail(creditResponse: creditResponse)
+        coordinatorDelegate?.showDetail(creditResponse: creditResponse)
     }
     
     // MARK: - Methods
@@ -48,6 +51,7 @@ class MainViewModel {
     func fetchScore() {
         self.cancellable = creditService.getCreditData().sink { [weak self] completion in
             guard let self = self else { return }
+            
             switch completion {
             case .failure:
                 self.creditResponse = nil

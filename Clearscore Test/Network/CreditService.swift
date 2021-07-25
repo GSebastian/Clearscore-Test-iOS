@@ -16,11 +16,12 @@ class CreditService: CreditServiceProtocol {
         // different environments), then I'd probably guard and raise a specific
         // error for malformed URLs.
         let url = URL(string: "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values")!
+        
         return URLSession.shared
             .dataTaskPublisher(for: url)
             .tryMap { (data, response) in
                 guard let httpResponse = response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else {
+                      httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
                     throw URLError(.badServerResponse)
                 }
                 return data

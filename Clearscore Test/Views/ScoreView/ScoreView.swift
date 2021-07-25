@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+// Note for interviewer: For some reason, @IBDesignable doesn't want to play nicely. I couldn't debug it, as I ran out of
+// time, however @IBDesignable has always been flakey to say the least!
+
+// Note for interviewer: I really wish I had the time to make accessibility better on this. In production, I would look
+// at supporting dynamic type, however in this case I just support the reduced motion accessibility setting. If enable,
+// the dial does not animate, but rather just appear in the correct position.
+
 @IBDesignable
 class ScoreView: UIView {
     
@@ -20,10 +27,10 @@ class ScoreView: UIView {
     @IBOutlet private var rootView: UIView!
     
     @IBOutlet private weak var dialView: UIView!
-    @IBOutlet weak var scoreIntroLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var maxScoreLabel: UILabel!
-    @IBOutlet weak var scoreStatusLabel: UILabel!
+    @IBOutlet private weak var scoreIntroLabel: UILabel!
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet private weak var maxScoreLabel: UILabel!
+    @IBOutlet private weak var scoreStatusLabel: UILabel!
     
     // MARK: - Configurable Properties
     
